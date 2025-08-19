@@ -2,15 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes scroll-horizontal {
+@keyframes scroll {
   0% {
-    transform: translateY(0%);
+    transform: translateX(0);
   }
+  /* 24%{
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(calc(-0.25 * var(--scroll-width)));
+  }
+  49%{
+    transform: translateX(calc(-0.25 * var(--scroll-width)));
+  }
+  50% {
+    transform: translateX(calc(-0.5 * var(--scroll-width)));
+  }
+  74%{
+    transform: translateX(calc(-0.5 * var(--scroll-width)));
+  }
+  75% {
+    transform: translateX(calc(-0.75 * var(--scroll-width)));
+  }
+  99%{
+    transform: translateX(calc(-0.75 * var(--scroll-width)));
+  } */
   100% {
-    transform: translateY(-50%);
+    transform: translateX(calc(-1 * var(--scroll-width)));
   }
-}
-
-.animate-scroll-horizontal {
-  animation: scroll-horizontal 30s linear infinite;
 }

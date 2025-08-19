@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Award, Crown, Sparkles, Star, MapPin, X, ChevronLeft, ChevronRight, ZoomIn, Trophy, Medal, AlignCenterVertical as Certificate } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
 import a1 from "../assets/awards/IMG_20250730_215955-min.jpg";
@@ -119,7 +120,7 @@ const awardsData: AwardItem[] = [
     description: "Award from Walkers, Yoga & Laughing Club, dated 00-11-2021. Likely a recognition for support or participation.",
     date: "November 2021", // Day not specified, month and year are.
     category: "community"
-  },{
+  }, {
     id: 11,
     src: zomatoAward,
     alt: "Zomato Restaurant Awards 2024",
@@ -363,7 +364,8 @@ const AwardsPage: React.FC = () => {
           </div>
         </>
       )}
-
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

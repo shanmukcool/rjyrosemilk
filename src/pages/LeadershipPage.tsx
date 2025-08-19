@@ -16,7 +16,8 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
 import founder from '../assets/founder.png';
@@ -381,7 +382,8 @@ const LeadershipPage = () => {
           </div>
         </div>
       </section>
-
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

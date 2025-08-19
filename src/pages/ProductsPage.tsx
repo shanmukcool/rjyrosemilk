@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import { Truck, Award, Star, CheckCircle, Crown, MapPin, Sparkles, ExternalLink, ShoppingCart, Store } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import patternImg from '../assets/design/pattern.png';
 import chain from '../assets/design/chain.png';
 import dividerImg from '../assets/design/divider.png';
@@ -75,14 +76,7 @@ const ProductsPage = () => {
       image: RoseMilkImg,
       category: 'drinks',
       ingredients: ['Buffalo Milk', 'Rose Essence', 'Hand-churned Milk Khoya', 'Sugar'],
-      applications: ['Summer Coolers', 'Drinkable Desserts', 'Festive Beverages', 'Café Menus'],
-      variants: [
-        { name: 'Classic', description: 'with sugar' },
-        { name: 'Sugar-Free', description: 'natural sweetness' },
-        { name: 'Iced Rose Milk', description: 'served cold with mineral ice' }
-      ],
-      swiggyLink: 'https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250',
-      zomatoLink: 'http://zoma.to/r/20698094'
+      applications: ['Summer Coolers', 'Drinkable Desserts', 'Festive Beverages', 'Café Menus']
     },
     {
       id: 'semia',
@@ -93,14 +87,7 @@ const ProductsPage = () => {
       image: SemiaImg,
       category: 'fusions',
       ingredients: ['Thin Semia (vermicelli)', 'Hand-churned Milk Khoya', 'Rose Essence', 'Mineral Ice', 'Sugar'],
-      applications: ['Traditional Desserts', 'Festive Menus', 'Heritage Events', 'Gourmet Meal Closers'],
-      variants: [
-        { name: 'Classic', description: 'with sugar' },
-        { name: 'Sugar-Free', description: 'sweetened with natural alternatives' },
-        { name: 'Iced', description: 'served cold with mineral ice' }
-      ],
-      swiggyLink: 'https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250',
-      zomatoLink: 'http://zoma.to/r/20698094'
+      applications: ['Traditional Desserts', 'Festive Menus', 'Heritage Events', 'Gourmet Meal Closers']
     },
     {
       id: 'rose-kova',
@@ -111,14 +98,7 @@ const ProductsPage = () => {
       image: RosekovaImg,
       category: 'fusions',
       ingredients: ['Hand-churned Milk Khoya', 'Rose Essence', 'Mineral Ice', 'Sugar'],
-      applications: ['Dessert Cups', 'Fusion Sweets', 'Festive Gifting', 'Luxury Catering'],
-      variants: [
-        { name: 'Classic', description: 'with sugar' },
-        { name: 'Sugar-Free', description: 'sweetened with natural alternatives' },
-        { name: 'Iced', description: 'pre-served over chilled mineral ice' }
-      ],
-      swiggyLink: 'https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250',
-      zomatoLink: 'http://zoma.to/r/20698094'
+      applications: ['Dessert Cups', 'Fusion Sweets', 'Festive Gifting', 'Luxury Catering']
     }
   ];
 
@@ -151,7 +131,7 @@ const ProductsPage = () => {
             }}
           ></div>
         </div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-8">
             <div className="inline-flex items-center bg-rose-500 rounded-full px-8 py-4 mb-8 shadow-xl border-2 border-gold/50">
@@ -200,7 +180,7 @@ const ProductsPage = () => {
         <img
           src={menu}
           alt="Hanging Menu"
-          className="w-[90%] sm:w-[596px] relative z-20 mt-32 border-8 border-[#8B2635] rounded-md shadow-xl"
+          className="w-[90%] sm:w-[596px] relative z-20 mt-32 border-4 border-[#A35E2E] rounded-md shadow-xl"
         />
       </div>
       {/* Featured Product - Rose Milk Syrup with Heritage Styling - UNCHANGED */}
@@ -265,7 +245,7 @@ const ProductsPage = () => {
                       }`}>
                       {/* Heritage Circular Icon Background */}
                       <div className="flex items-center justify-center" style={{ width: '12vmin', height: '12vmin' }}>
-                        <img src={ingredient.src} alt={`${ingredient.name} Icon`} className="w-full h-full object-cover" />
+                        <img src={ingredient.src} alt={`${ingredient.name} Icon`} className="w-full h-full object-contain" />
                       </div>
 
                       {/* Ingredient Name with Heritage Typography */}
@@ -309,7 +289,7 @@ const ProductsPage = () => {
                               <img
                                 src={ingredient.src}
                                 alt={ingredient.name}
-                                className="h-24 w-24 object-cover rounded-lg"
+                                className="h-24 w-24 object-contain rounded-lg"
                               />
                             </div>
 
@@ -526,7 +506,7 @@ const ProductsPage = () => {
 
             <div className="flex justify-center gap-6">
               <a
-                href="https://www.swiggy.com"
+                href="https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-6 py-4 bg-orange-500 text-white rounded-full hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl text-base transform hover:scale-105 font-serif"
@@ -535,7 +515,7 @@ const ProductsPage = () => {
                 <ExternalLink className="h-5 w-5 ml-2" />
               </a>
               <a
-                href="https://www.zomato.com"
+                href="http://zoma.to/r/20698094"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center px-6 py-4 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors font-bold shadow-lg hover:shadow-xl text-base transform hover:scale-105 font-serif"
@@ -548,7 +528,8 @@ const ProductsPage = () => {
 
         </div>
       </section>
-
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

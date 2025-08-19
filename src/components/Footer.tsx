@@ -1,17 +1,17 @@
 import { Link } from 'react-router-dom';
 import { Instagram, MapPin, Facebook, Phone, Crown, Sparkles, Heart, Star, ExternalLink } from 'lucide-react';
 import OldLogo from '../assets/oldlogo1.png';
-import supplychainVideo from '../assets/videos/supplychain.mp4';
+import supplychainVideo from '../assets/videos/life.mp4';
 const Footer = () => {
   return (
     <footer id="contact" className="bg-brand-primary text-white py-16 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      {/* <div className="absolute inset-0 opacity-10">
         <div className="w-full h-full" style={{
           backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
           backgroundSize: '60px 60px'
         }}></div>
-      </div>
+      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 relative z-10">
@@ -148,7 +148,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/leadership" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
+                <Link to="/about/leadership" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
                   Our leadership
                 </Link>
@@ -201,7 +201,7 @@ const Footer = () => {
             {/* Address */}
             <div className="mt-4 bg-white/10 border-l-4 border-gold p-3 rounded-r-lg backdrop-blur-sm">
               <p className="text-white/90 text-sm font-serif">
-                <strong>Main Store:</strong><br />
+                <strong>Our Flagship Store – Where It All Began:</strong><br />
                 Main Rd, Mangalavaripeta<br />
                 Rajamahendravaram, AP 533101
               </p>

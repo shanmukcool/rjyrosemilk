@@ -10,14 +10,18 @@ import {
   Award,
   Star,
   ArrowRight,
-  MapPin,
+  CheckCircle,
   Building,
   ExternalLink,
-  TrendingUp
+  TrendingUp,
+  Store,
+  Calendar,
+  Droplets
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import newlogoImg from '../assets/newlogo.png';
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
@@ -27,7 +31,7 @@ import rrgImg from '../assets/stores/1980.png';
 import signaturestoreImg from '../assets/stores/s1signaturestore.jpg';
 import headbranchImg from '../assets/stores/s2headbranch.jpg';
 import experiencestoreImg from '../assets/stores/s3experiencestore.jpg';
-import plate from '../assets/plate.png';
+import rosecut from '../assets/design/rosecut.png';
 import petal1 from '../assets/design/petal1.png';
 import petal2 from '../assets/design/petal2.png';
 import petal3 from '../assets/design/petal3.png';
@@ -405,8 +409,8 @@ const StoryPage = () => {
 
       {/* Stats Section */}
       <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
+        {/* Background gradient (keep if you like subtle depth) */}
+        <div className="absolute inset-0 bg-[#852534]"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -414,72 +418,98 @@ const StoryPage = () => {
               <Award className="h-5 w-5 text-cream mr-2" />
               <span className="text-cream font-bold font-serif">Legacy in Numbers</span>
             </div>
-            <img
-              src={plate}
-              className="w-96 h-auto object-cover flex m-auto"
-              loading="lazy"
-            />
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif">
-              <span className="block text-rose-500">75 Years of</span>
-              <span className="block text-mustard">Memories Served</span>
-            </h2>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-cream/50 rounded-3xl text-center shadow-xl border-4 border-gold/30 hover:shadow-2xl transition-all duration-300">
-              <div className="text-6xl font-bold text-rose-500 mb-4 font-serif">25+</div>
-              <div className="text-xl font-bold text-dark mb-2 font-serif">Crore Glasses</div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
+              {/* Days */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Calendar className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">26,250+</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Days</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Freshly made every single day since 1950.</div> */}
+                </div>
+              </div>
+
+              {/* Hours */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Clock className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">315,000+</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Hours</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Dedicated to serving joy in a glass.</div> */}
+                </div>
+              </div>
+
+              {/* Litres */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Droplets className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">1,640,625+</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Litres</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Of pure rose milk crafted with care</div> */}
+                </div>
+              </div>
+
+              {/* Stores */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Store className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">15</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Stores</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Bringing heritage closer to you.</div> */}
+                </div>
+              </div>
+
+              {/* Staff */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Users className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">300+</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Staff</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Across three generations.</div> */}
+                </div>
+              </div>
+
+              {/* Years */}
+              <div className="relative bg-cream p-8 text-center overflow-hidden min-h-[350px] flex flex-col justify-center items-center">
+                <div
+                  className="absolute inset-0 bg-no-repeat bg-center bg-contain"
+                  style={{ backgroundImage: `url(${rosecut})`, backgroundSize: "100%" }}
+                ></div>
+                <div className="relative z-10">
+                  <Award className="h-12 w-12 text-mustard mx-auto mb-4" />
+                  <div className="text-4xl lg:text-5xl font-bold text-mustard mb-2 font-serif">75</div>
+                  <div className="text-xl font-bold text-dark mb-4 font-serif">Years</div>
+                  {/* <div className="text-dark/70 font-sans leading-relaxed">Of uninterrupted production</div> */}
+                </div>
+              </div>
             </div>
-
-            <div className="bg-cream/50 rounded-3xl text-center shadow-xl border-4 border-gold/30 hover:shadow-2xl transition-all duration-300">
-              <div className="text-6xl font-bold text-rose-500 mb-4 font-serif">20</div>
-              <div className="text-xl font-bold text-dark mb-2 font-serif">Outlets</div>
-            </div>
-
-            <div className="bg-cream/50 rounded-3xl text-center shadow-xl border-4 border-gold/30 hover:shadow-2xl transition-all duration-300">
-              <div className="text-6xl font-bold text-rose-500 mb-4 font-serif">100+</div>
-              <div className="text-xl font-bold text-dark mb-2 font-serif">Expert Staff members</div>
-              {/* <div className="text-dark/70">Unchanged since day one</div> */}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 bg-rose-500 text-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
-
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6 font-serif">
-            Taste the Legacy Today
-          </h2>
-          <p className="text-xl mb-12 text-cream/90 font-serif italic">
-            Experience the same authentic taste that has been cherished for 75 years.
-          </p>
-
-          <div className="">
-
-            <Link
-              to="/about/leadership"
-              className="border-2 border-cream text-cream px-8 py-4 rounded-full font-bold hover:bg-cream hover:text-rose-500 transition-colors inline-flex items-center justify-center group shadow-xl font-serif"
-            >
-              <Users className="h-5 w-5 mr-2 group-hover:scale-110 transition-transform" />
-              Meet Our Family
-              <ArrowRight className="h-4 w-4 ml-2" />
-            </Link>
           </div>
         </div>
       </section>
 
       {/* Rose Street Section */}
       <section className="py-20 bg-cream relative overflow-hidden">
-        <FloatingPetals />
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div
@@ -491,87 +521,79 @@ const StoryPage = () => {
           ></div>
         </div>
 
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-gold/30 relative p-8 sm:p-12 lg:p-16">
+        <h2 className="text-center text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif leading-tight">
+          <span className="block text-rose-500">Our Sub-Brand</span>
+          <span className="block text-mustard">Where a Legacy is Reborn</span>
+        </h2>
 
-            {/* Background Glow */}
-            <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-mustard/5 pointer-events-none"></div>
+        {/* Decorative Divider */}
+        <div className="flex items-center justify-center mb-6">
+          <img
+            src={dividerImg}
+            alt="Section Separator"
+            className="h-12 w-auto"
+          />
+        </div>
 
-            {/* Logo and Title */}
-            <div className="flex items-center mb-6">
-              <img
-                src={newlogoImg}
-                alt="Brand Logo"
-                className="w-36 h-18"
-              />
-              <div>
-                <h2 className="text-4xl font-bold text-dark font-serif mb-2">Rose Street</h2>
-                <p className="text-lg text-rose-500 font-serif italic">
-                  A modern tribute to the iconic Rajahmundry Rose Milk.
-                </p>
-              </div>
-            </div>
-
-            {/* Quote */}
-            <div className="bg-cream/50 border-l-4 border-rose-500 p-6 rounded-r-lg mb-8 shadow-lg">
-              <div className="flex items-start">
-                <Quote className="h-6 w-6 text-rose-500 mr-3 flex-shrink-0 mt-1" />
-                <p className="text-lg text-dark font-serif italic">
-                  "Rose Street is a curated lifestyle experience inspired by the
-                  timeless taste and tradition of Rajahmundry Rose Milk."
-                </p>
-              </div>
-            </div>
-
-            {/* Features */}
-            <div className="space-y-6 mb-8">
-              <div className="flex items-start">
-                <div className="bg-rose-500 rounded-full p-2 mr-4 mt-1 shadow-lg border border-gold/50">
-                  <Heart className="h-4 w-4 text-cream" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-dark font-serif mb-2">Nostalgia-Infused Treats</h3>
-                  <p className="text-dark/80">
-                    Special desserts and creations that carry the essence of
-                    Rajahmundry's signature rose flavor.
-                  </p>
-                </div>
-              </div>
-
-              <div className="flex items-start">
-                <div className="bg-mustard rounded-full p-2 mr-4 mt-1 shadow-lg border border-gold/50">
-                  <Award className="h-4 w-4 text-cream" />
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-dark font-serif mb-2">A Taste of Tradition</h3>
-                  <p className="text-dark/80">
-                    Bringing the charm of yesteryear into modern spaces through
-                    curated rose-based experiences.
-                  </p>
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="grid lg:grid-cols-3 items-center">
+            {/* Left side - Logo */}
+            <div className="flex justify-center lg:justify-start">
+              <div className={`w-full flex items-center justify-center transform transition-all duration-1000 
+                }`}>
+                <div className="relative">
+                  <div className="absolute blur-xl animate-pulse"></div>
+                  <div className="">
+                    <img
+                      src={newlogoImg}
+                      alt="Rajahmundry Rose Milk"
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* CTA */}
-            <div className="bg-cream/30 rounded-2xl p-6 text-center border-2 border-gold/30 shadow-lg">
-              <p className="text-xl font-bold text-dark mb-4 font-serif">
-                We're taking nostalgia and turning it into a lifestyle.
+            {/* Right side - Content */}
+            <div className={`lg:col-span-2 text-center lg:text-left transform transition-all duration-1000 delay-300}`}>
+              <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-6 font-serif leading-tight">
+                <span className="block text-rose-500 drop-shadow-lg">Rose Street</span>
+              </h1>
+
+              <p className="text-xl lg:text-2xl text-dark/80 mb-8 max-w-4xl mx-auto lg:mx-0 leading-relaxed font-serif italic">
+                "Our rose-flavored drinkable desserts blend timeless tradition with modern indulgence"
               </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-6 mb-12">
+                <div className="flex items-center text-dark/70 bg-white/50 px-4 py-2 rounded-full border border-gold/30">
+                  <CheckCircle className="h-5 w-5 text-rose-500 mr-2" />
+                  <span className="font-semibold">Delivered Fresh</span>
+                </div>
+                <div className="flex items-center text-dark/70 bg-white/50 px-4 py-2 rounded-full border border-gold/30">
+                  <CheckCircle className="h-5 w-5 text-rose-500 mr-2" />
+                  <span className="font-semibold">100% Authentic</span>
+                </div>
+                <div className="flex items-center text-dark/70 bg-white/50 px-4 py-2 rounded-full border border-gold/30">
+                  <CheckCircle className="h-5 w-5 text-rose-500 mr-2" />
+                  <span className="font-semibold">Ready to Sip</span>
+                </div>
+              </div>
               <a
                 href="https://rrosestreet.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center bg-rose-500 text-cream px-8 py-4 rounded-full font-bold hover:bg-dark transition-all duration-300 transform hover:scale-105 shadow-xl border-2 border-gold/50 font-serif"
               >
-                Visit Rose Street
+                Experience Rose Street
                 <ExternalLink className="h-5 w-5 ml-2" />
               </a>
             </div>
-
           </div>
         </div>
-      </section>
 
+      </section>
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

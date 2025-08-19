@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Menu, X, Home, Info, Package, Handshake, Store, Crown, Sparkles, ChevronDown, Clock, Users, Camera, Award } from 'lucide-react';
+import { ScanBarcode, Menu, X, Home, Info, Package, Handshake, Crown, Sparkles, ChevronDown, Clock, Users, Camera, Award } from 'lucide-react';
 import OldLogo from '../assets/oldlogo1.png';
 
 const Header = () => {
@@ -9,6 +9,16 @@ const Header = () => {
   const [isMobileAboutDropdownOpen, setIsMobileAboutDropdownOpen] = useState(false);
   const [showHeader, setShowHeader] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [showTelugu, setShowTelugu] = useState(false);
+
+  // Text transition effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowTelugu(prev => !prev);
+    }, 3000); // Change text every 3 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -62,16 +72,21 @@ const Header = () => {
   }, [lastScrollY]);
 
   // Close dropdown when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (isAboutDropdownOpen && !event.target.closest('.about-dropdown-container')) {
-        setIsAboutDropdownOpen(false);
-      }
-    };
+ useEffect(() => {
+  const handleClickOutside = (event: MouseEvent) => {
+    if (
+      isAboutDropdownOpen &&
+      !(event.target as HTMLElement).closest('.about-dropdown-container')
+    ) {
+      setIsAboutDropdownOpen(false);
+    }
+  };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isAboutDropdownOpen]);
+  document.addEventListener('mousedown', handleClickOutside);
+  return () => document.removeEventListener('mousedown', handleClickOutside);
+}, [isAboutDropdownOpen]);
+
+  
   return (
     <>
       <header
@@ -81,12 +96,12 @@ const Header = () => {
         style={{ position: 'sticky' }}
       >
         {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
+        {/* <div className="absolute inset-0 opacity-10">
           <div className="w-full h-full" style={{
             backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
             backgroundSize: '40px 40px'
           }}></div>
-        </div>
+        </div> */}
         
         {/* Corner Decorations */}
         <div className="absolute top-0 left-0 w-16 h-16 border-l-2 border-t-2 border-gold/30 border-double"></div>
@@ -104,18 +119,31 @@ const Header = () => {
                   />
               </div>
               
-              {/* Brand Name */}
+              {/* Brand Name with Transition */}
               <div className="flex flex-col">
-                <span className="text-2xl font-bold text-white font-serif leading-tight drop-shadow-lg">
-                  Rajahmundry Rose Milk
-                </span>
-                {/* <div className="flex items-center">
+                <div className="relative min-h-[4rem] sm:min-h-[3rem] flex items-center">
+                  <span 
+                    className={`text-2xl font-bold text-white font-serif leading-tight drop-shadow-lg transition-all duration-1000 ease-in-out absolute sm:whitespace-nowrap ${
+                      showTelugu ? 'opacity-0' : 'opacity-100'
+                    }`}
+                  >
+                    Rajahmundry Rose Milk
+                  </span>
+                  <span 
+                    className={`text-2xl font-bold text-white font-serif leading-tight drop-shadow-lg transition-all duration-1000 ease-in-out absolute whitespace-nowrap ${
+                      showTelugu ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    రాజమండ్రి రోజ్ మిల్క్
+                  </span>
+                </div>
+                <div className="flex items-center">
                   <Crown className="h-3 w-3 text-gold mr-1" />
                   <span className="text-gold text-xs font-bold font-serif tracking-wide">
                     EST. 1950
                   </span>
                   <Sparkles className="h-3 w-3 text-gold ml-1" />
-                </div> */}
+                </div>
               </div>
             </Link>
             
@@ -341,6 +369,18 @@ const Header = () => {
                 </div>
                 <div>
                   <div className="font-bold">PRODUCTS</div>
+                </div>
+              </Link>
+              <Link 
+                to="/authenticate" 
+                className="flex items-center text-lg font-medium text-dark hover:text-rose-500 transition-all duration-300 py-4 border-b-2 border-gold/30 group font-serif"
+                onClick={closeMobileMenu}
+              >
+                <div className="bg-gold/10 rounded-full p-3 mr-4 group-hover:bg-gold/20 transition-all duration-300 border border-gold/30">
+                  <ScanBarcode className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="font-bold">AUTHENTICATE</div>
                 </div>
               </Link>
               <Link 

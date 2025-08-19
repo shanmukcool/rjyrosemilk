@@ -13,7 +13,7 @@ export default {
       colors: {
         // Brand primary color
         brand: {
-          primary: '#c4002e',
+          primary: 'rgb(133 37 52)',
           secondary: '#FFF9F5',
         },
         // Updated rose colors

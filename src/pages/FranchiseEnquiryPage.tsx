@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, Send, User, Phone, MapPin, Crown, Sparkles, Heart, Award, Users, Building, TrendingUp, CheckCircle } from 'lucide-react';
+import { Navigation, Send, User, Phone, MapPin, Crown, Sparkles, Heart, Award, Users, Building, TrendingUp, CheckCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
 const FranchiseEnquiryPage = () => {
@@ -36,7 +37,7 @@ Phone: ${formData.phoneNumber}
 Proposed City: ${formData.proposedCity || 'Not specified'}`;
 
     // Create mailto link
-    const mailtoLink = `mailto:myemail@gmail.com?subject=${encodeURIComponent('I would like to open a franchise')}&body=${encodeURIComponent(emailBody)}`;
+    const mailtoLink = `mailto:rishik@rrosestreet.com?subject=${encodeURIComponent('I would like to open a franchise')}&body=${encodeURIComponent(emailBody)}`;
 
     // Open email client in new tab/window
     window.open(mailtoLink, '_blank');
@@ -68,7 +69,56 @@ Proposed City: ${formData.proposedCity || 'Not specified'}`;
       color: 'rose-500'
     }
   ];
-
+  const stores = [
+    {
+      id: 1,
+      name: 'Tirupati',
+      phone: '9959913131',
+      directionsLink: 'https://maps.app.goo.gl/Mkm1W4PEi3XY1qz47',
+    },
+    {
+      id: 2,
+      name: 'Vijayawada',
+      phone: '9492149794',
+      directionsLink: 'https://maps.app.goo.gl/okn437L7oXVGuhcu7',
+    },
+    {
+      id: 3,
+      name: 'Hyd(DLF)',
+      phone: '9676668967',
+      directionsLink: 'https://maps.app.goo.gl/7EpB6K3vNvDwPeQA6',
+    },
+    {
+      id: 4,
+      name: 'Kakinada',
+      phone: '9885159687',
+      directionsLink: 'https://maps.app.goo.gl/3XydxMPTB8nzEjhs5',
+    },
+    {
+      id: 5,
+      name: 'Hyd(DLF),Kukatpally',
+      phone: '9347149809',
+      directionsLink: 'https://maps.app.goo.gl/wNGK98EpAq4jddfm8',
+    },
+    {
+      id: 6,
+      name: 'Vijayawada (Gandhinagar)',
+      phone: '9347149809',
+      directionsLink: 'https://maps.app.goo.gl/yc8n67cDBRWDQdN58',
+    },
+    {
+      id: 7,
+      name: 'Bhimavaram (Gandhinagar)',
+      phone: '9347149809',
+      directionsLink: 'https://maps.app.goo.gl/3ufVHEzLs2Pp3tFH7',
+    },
+    {
+      id: 8,
+      name: 'Annavaram',
+      phone: '9100578954',
+      directionsLink: 'https://maps.app.goo.gl/TTkABajJ976EQWPG7',
+    },
+  ];
   return (
     <div className="min-h-screen bg-cream">
       <Header />
@@ -141,6 +191,86 @@ Proposed City: ${formData.proposedCity || 'Not specified'}`;
         </div>
       </section>
 
+      {/* Store Listings */}
+      <section className="py-20 bg-cream relative overflow-hidden">
+        {/* Vintage Background Pattern */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="w-full h-full" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
+            backgroundSize: '80px 80px'
+          }}></div>
+        </div>
+        <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif w-full text-center">
+          <span className="block text-rose-500">Our</span>
+          <span className="block text-mustard">Franchises</span>
+        </h2>
+        {/* Decorative Divider */}
+        <div className="flex items-center mb-6 w-full">
+          <img
+            src={dividerImg}
+            alt="Section Separator"
+            className="h-10 w-full object-contain"
+          />
+        </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {stores.map((store) => (
+              <div
+                key={store.id}
+                className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-4 border-gold/30 transform hover:-translate-y-2 relative"
+              >
+                {/* Background Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-rose-500/5 via-transparent to-mustard/5 opacity-50"></div>
+
+                {/* Content Container */}
+                <div className="p-8 relative z-10">
+                  {/* Store Name */}
+                  <div className="text-center mb-8">
+                    <div className="flex items-center justify-center mb-4">
+                      <div className="bg-rose-500 rounded-full p-3 shadow-lg border-2 border-gold/50">
+                        <MapPin className="h-8 w-8 text-cream" />
+                      </div>
+                    </div>
+                    <h2 className="text-2xl font-bold text-dark font-serif text-center">
+                      {store.name}
+                    </h2>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="space-y-4">
+                    {/* Get Directions Button */}
+                    <button
+                      onClick={() => window.open(store.directionsLink, '_blank')}
+                      className="w-full bg-rose-500 text-cream py-4 px-6 rounded-full font-bold hover:bg-dark transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center border-2 border-gold/50 font-serif"
+                    >
+                      <Navigation className="h-5 w-5 mr-2" />
+                      Get Directions
+                    </button>
+
+                    {/* Call Store Button */}
+                    {store.phone ? (
+                      <a
+                        href={`tel:${store.phone}`}
+                        className="w-full border-2 border-rose-500 text-rose-500 py-4 px-6 rounded-full font-bold hover:bg-rose-500 hover:text-cream transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center justify-center font-serif"
+                      >
+                        <Phone className="h-5 w-5 mr-2" />
+                        Call Store
+                      </a>
+                    ) : (
+                      <div className="w-full border-2 border-gray-300 text-gray-400 py-4 px-6 rounded-full font-bold inline-flex items-center justify-center font-serif cursor-not-allowed">
+                        <Phone className="h-5 w-5 mr-2" />
+                        Call Not Available
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-20 bg-cream relative overflow-hidden">
         {/* Vintage Background Pattern */}
@@ -162,6 +292,14 @@ Proposed City: ${formData.proposedCity || 'Not specified'}`;
               <span className="block text-rose-500">Why Partner</span>
               <span className="block text-mustard">With Us?</span>
             </h2>
+            {/* Decorative Divider */}
+            <div className="flex items-center mb-6 w-full">
+              <img
+                src={dividerImg}
+                alt="Section Separator"
+                className="h-10 w-full object-contain"
+              />
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -209,12 +347,12 @@ Proposed City: ${formData.proposedCity || 'Not specified'}`;
             </h2>
 
             {/* Decorative Divider */}
-            <div className="flex items-center justify-center mb-6">
-              <div className="h-px bg-gold flex-1 max-w-24"></div>
-              <div className="mx-4">
-                <Crown className="h-6 w-6 text-gold" />
-              </div>
-              <div className="h-px bg-gold flex-1 max-w-24"></div>
+            <div className="flex items-center mb-6 w-full">
+              <img
+                src={dividerImg}
+                alt="Section Separator"
+                className="h-10 w-full object-contain"
+              />
             </div>
 
             <p className="text-xl text-dark/80 font-serif italic">
@@ -341,7 +479,8 @@ Proposed City: ${formData.proposedCity || 'Not specified'}`;
           </div>
         </div>
       </section>
-
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

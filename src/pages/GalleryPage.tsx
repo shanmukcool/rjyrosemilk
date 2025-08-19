@@ -15,7 +15,8 @@ import {
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import venkatesh from '../assets/gallery/celebritys/1-min.jpg';
 import venkatesh2 from '../assets/gallery/celebritys/1.png';
 import cbn from '../assets/gallery/celebritys/2cbn.png';
@@ -815,7 +816,8 @@ const GalleryPage: React.FC = () => {
           </div>
         </>
       )}
-
+      <FindNearestStoreButton />
+<RoseStreetButton />
       <Footer />
     </div>
   );
