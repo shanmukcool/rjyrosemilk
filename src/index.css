@@ -2,32 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-@keyframes scroll {
+@keyframes coin-spin {
   0% {
-    transform: translateX(0);
+    transform: rotateY(0deg);
   }
-  /* 24%{
-    transform: translateX(0);
+  10% {
+    transform: rotateY(45deg);   /* very slow start */
   }
-  25% {
-    transform: translateX(calc(-0.25 * var(--scroll-width)));
+  30% {
+    transform: rotateY(720deg);  /* speeds up */
   }
-  49%{
-    transform: translateX(calc(-0.25 * var(--scroll-width)));
-  }
-  50% {
-    transform: translateX(calc(-0.5 * var(--scroll-width)));
-  }
-  74%{
-    transform: translateX(calc(-0.5 * var(--scroll-width)));
-  }
-  75% {
-    transform: translateX(calc(-0.75 * var(--scroll-width)));
-  }
-  99%{
-    transform: translateX(calc(-0.75 * var(--scroll-width)));
-  } */
-  100% {
-    transform: translateX(calc(-1 * var(--scroll-width)));
-  }
+}
+
+.coin-spin {
+  animation: coin-spin 6s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  animation-delay: 3s;
+  transform-style: preserve-3d;
 }

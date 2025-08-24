@@ -347,16 +347,20 @@ const ProductsPage = () => {
                     <div>
                       <h3 className="text-2xl font-bold text-dark mb-4 font-serif">Buy From</h3>
                       <div className="grid grid-cols-2 gap-4">
-                        <Link
-                          to="/stores"
-                          className="flex items-center justify-center px-4 py-3 bg-rose-500 text-cream rounded-lg hover:bg-dark transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
-                        >
-                          <Store className="h-5 w-5 mr-2" />
-                          Store
-                        </Link>
+                        <button className="flex items-center justify-center px-4 py-3 bg-red-500  text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif">
+                          <a
+                            href="https://www.indiamart.com/rose-street/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            <ShoppingCart className="h-5 w-5 mr-2" />
+                            IndiaMart
+                          </a>
+                        </button>
                         <button className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif">
                           <a
-                            href="https://www.amazon.in/dp/B0FCNH87JX?th=1"
+                            href="https://www.amazon.in/storefront?me=A2053PX3WBG6Y5&ref_=ssf_share"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center"

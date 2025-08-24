@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ScanBarcode, Menu, X, Home, Info, Package, Handshake, Crown, Sparkles, ChevronDown, Clock, Users, Camera, Award } from 'lucide-react';
+import { ScanBarcode, Menu, X, Home, Info, Package, Handshake, Crown, Sparkles, ChevronDown, Clock, Users, Camera, Award, MapPinIcon } from 'lucide-react';
 import OldLogo from '../assets/oldlogo1.png';
 
 const Header = () => {
@@ -354,6 +354,18 @@ const Header = () => {
                    </div>
                    <div>
                      <div className="font-bold">Our Leadership</div>
+                   </div>
+                 </Link>
+                 <Link 
+                   to="/about/tourism" 
+                   className="flex items-center text-base font-medium text-dark/80 hover:text-mustard transition-all duration-300 py-3 group font-serif"
+                   onClick={closeMobileMenu}
+                 >
+                   <div className="bg-mustard/10 rounded-full p-2 mr-3 group-hover:bg-mustard/20 transition-all duration-300 border border-gold/30">
+                     <MapPinIcon className="h-4 w-4 text-mustard" />
+                   </div>
+                   <div>
+                     <div className="font-bold">Our Rajahmundry</div>
                    </div>
                  </Link>
                </div>

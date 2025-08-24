@@ -327,86 +327,6 @@ const StoryPage = () => {
         </div>
       </section>
 
-      {/* Customer Growth Chart Section */}
-      <section className="py-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center bg-mustard rounded-full px-6 py-3 mb-6 shadow-lg border-2 border-gold/50">
-              <TrendingUp className="h-5 w-5 text-cream mr-2" />
-              <span className="text-cream font-bold font-serif">Growth Story</span>
-            </div>
-
-            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif">
-              <span className="block text-rose-500">From Humble Handcart</span>
-              <span className="block text-mustard">to City Institution</span>
-            </h2>
-
-            {/* Decorative Divider */}
-            <div className="flex items-center justify-center mb-6">
-              <img
-                src={dividerImg}
-                alt="Section Separator"
-                className="h-16 w-auto"
-              />
-            </div>
-
-            <p className="text-xl text-dark/80 max-w-4xl mx-auto font-serif italic leading-relaxed">
-              Witness the remarkable journey of growth that spans 75 years — from serving 50 customers a day
-              in 1950 to delighting over 5,500 daily visitors today. Each data point represents countless
-              smiles, memories, and moments of pure joy.
-            </p>
-          </div>
-
-          {/* Growth Chart */}
-          <div className="bg-cream/50 rounded-3xl p-8 border-4 border-gold/30 shadow-xl">
-            <div className="grid grid-cols-5 gap-4 h-96 items-end">
-              {growthData.map((data) => {
-                const height = (data.customers / 30000) * 256; // 256px = h-64
-
-                return (
-                  <div key={data.year} className="text-center">
-                    {/* Bar */}
-                    <div className="relative mb-4">
-                      <div
-                        className="w-full bg-gradient-to-t from-rose-500 to-mustard rounded-t-lg mx-auto shadow-lg border-2 border-gold/30"
-                        style={{
-                          maxWidth: '60px',
-                          height: `${height}px`
-                        }}
-                      ></div>
-
-                      {/* Customer Count */}
-                      <div className="absolute -top-8 left-1/2 transform -translate-x-1/2 bg-dark text-cream px-2 py-1 rounded text-xs font-bold">
-                        {data.customers.toLocaleString()}
-                      </div>
-                    </div>
-
-                    {/* Year Label */}
-                    <div className="text-dark font-bold font-serif">
-                      {data.year}
-                    </div>
-
-                    {/* Outlets Count */}
-                    <div className="text-rose-500 text-sm font-semibold">
-                      {data.outlets} outlet{data.outlets > 1 ? 's' : ''}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-        </div>
-      </section>
-
       {/* Stats Section */}
       <section className="py-20 bg-white relative overflow-hidden">
         {/* Background gradient (keep if you like subtle depth) */}
@@ -414,9 +334,19 @@ const StoryPage = () => {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-mustard rounded-full px-6 py-3 mb-6 shadow-lg border-2 border-gold/50">
-              <Award className="h-5 w-5 text-cream mr-2" />
-              <span className="text-cream font-bold font-serif">Legacy in Numbers</span>
+
+            <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-8 font-serif leading-tight">
+              <span className="block text-mustard">Heritage in Every Sip</span>
+              <span className="block text-mustard">Numbers that tell our story</span>
+            </h1>
+
+            {/* Decorative Divider */}
+            <div className="flex items-center justify-center mb-8">
+              <img
+                src={dividerImg}
+                alt="Section Separator"
+                className="h-16 w-auto"
+              />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12">
@@ -509,18 +439,8 @@ const StoryPage = () => {
       </section>
 
       {/* Rose Street Section */}
-      <section className="py-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-              backgroundSize: '60px 60px',
-            }}
-          ></div>
-        </div>
-
+      <section className="py-20 relative overflow-hidden">
+     
         <h2 className="text-center text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif leading-tight">
           <span className="block text-rose-500">Our Sub-Brand</span>
           <span className="block text-mustard">Where a Legacy is Reborn</span>
@@ -546,8 +466,8 @@ const StoryPage = () => {
                   <div className="">
                     <img
                       src={newlogoImg}
-                      alt="Rajahmundry Rose Milk"
-                      className="w-full h-auto object-contain"
+                      alt="Rose Street Logo"
+                      className="w-[80%] h-auto object-contain mx-auto"
                     />
                   </div>
                 </div>
@@ -556,9 +476,9 @@ const StoryPage = () => {
 
             {/* Right side - Content */}
             <div className={`lg:col-span-2 text-center lg:text-left transform transition-all duration-1000 delay-300}`}>
-              <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-6 font-serif leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-bold text-dark mb-6 font-serif leading-tight">
                 <span className="block text-rose-500 drop-shadow-lg">Rose Street</span>
-              </h1>
+              </h2>
 
               <p className="text-xl lg:text-2xl text-dark/80 mb-8 max-w-4xl mx-auto lg:mx-0 leading-relaxed font-serif italic">
                 "Our rose-flavored drinkable desserts blend timeless tradition with modern indulgence"

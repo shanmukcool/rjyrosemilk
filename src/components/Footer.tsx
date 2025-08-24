@@ -2,16 +2,14 @@ import { Link } from 'react-router-dom';
 import { Instagram, MapPin, Facebook, Phone, Crown, Sparkles, Heart, Star, ExternalLink } from 'lucide-react';
 import OldLogo from '../assets/oldlogo1.png';
 import supplychainVideo from '../assets/videos/life.mp4';
+import instaLogo from "../assets/design/connect/instagram.png";
+import fbLogo from "../assets/design/connect/facebook.png";
+import phoneLogo from "../assets/design/connect/phone.png";
+import whatsappLogo from "../assets/design/connect/whatsapp.png";
+
 const Footer = () => {
   return (
     <footer id="contact" className="bg-brand-primary text-white py-16 relative overflow-hidden">
-      {/* Background Pattern */}
-      {/* <div className="absolute inset-0 opacity-10">
-        <div className="w-full h-full" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
-          backgroundSize: '60px 60px'
-        }}></div>
-      </div> */}
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-4 gap-8 relative z-10">
@@ -57,23 +55,34 @@ const Footer = () => {
                     href="https://www.instagram.com/rajahmundryrosemilkoffl/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 rounded-full p-3 text-white/80 hover:text-gold hover:bg-gold/20 transition-all duration-300 border border-gold/30 shadow-lg backdrop-blur-sm group"
+                    className="rounded-md transition-all duration-300 overflow-hidden"
                   >
-                    <Instagram className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    <img src={instaLogo} alt="Instagram" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
                   </a>
+
                   <a
                     href="https://www.facebook.com/rosemilk1950/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white/10 rounded-full p-3 text-white/80 hover:text-gold hover:bg-gold/20 transition-all duration-300 border border-gold/30 shadow-lg backdrop-blur-sm group"
+                    className="rounded-md transition-all duration-300 overflow-hidden"
                   >
-                    <Facebook className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    <img src={fbLogo} alt="Facebook" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
                   </a>
+
                   <a
-                    href="tel:+919347149809"
-                    className="bg-white/10 rounded-full p-3 text-white/80 hover:text-gold hover:bg-gold/20 transition-all duration-300 border border-gold/30 shadow-lg backdrop-blur-sm group"
+                    href="tel:+916262252519"
+                    target='_blank'
+                    className="rounded-md transition-all duration-300 overflow-hidden"
                   >
-                    <Phone className="h-6 w-6 group-hover:scale-110 transition-transform duration-300" />
+                    <img src={phoneLogo} alt="Phone" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
+                  </a>
+
+                  <a
+                    href="https://wa.me/+916262252519"
+                    target='_blank'
+                    className="rounded-md transition-all duration-300 overflow-hidden"
+                  >
+                    <img src={whatsappLogo} alt="Whatsapp" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
                   </a>
                 </div>
 
@@ -90,8 +99,8 @@ const Footer = () => {
                   </a>
                 </div>
               </div>
-
             </div>
+
           </div>
 
           {/* Products Section */}
@@ -154,9 +163,21 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/about/tourism" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
+                  <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
+                  Our Rajahmundry
+                </Link>
+              </li>
+              <li>
                 <Link to="/products" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
                   Products
+                </Link>
+              </li>
+              <li>
+                <Link to="/authenticate" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
+                  <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
+                  Authenticate
                 </Link>
               </li>
               <li>
@@ -211,7 +232,8 @@ const Footer = () => {
 
         {/* Trademark Section */}
         <div className="text-center relative z-10 -mx-4 sm:-mx-6 lg:-mx-8">
-          {/* Trademark Video */}
+
+          {/* Supplychain Video */}
           <video
             src={supplychainVideo}
             autoPlay

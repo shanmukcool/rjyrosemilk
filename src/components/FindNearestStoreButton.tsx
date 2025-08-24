@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { MapPin, Navigation } from "lucide-react";
+import { Navigation } from "lucide-react";
 import { motion } from "framer-motion";
-import oldlogoImg from "../../public/oldlogo.png"; // Use your actual path
+import oldlogoImg from "../assets/oldlogo.png";
 
 // Define the Store type
 type Store = {
@@ -12,7 +12,7 @@ type Store = {
     directionsLink: string;
 };
 
-// ✅ You already filled coords correctly
+// ✅ Store coordinates
 const stores: Store[] = [
     { id: 1, name: "Own 1", lat: 17.0034319, lng: 81.7706223, directionsLink: "https://maps.app.goo.gl/38NiP68XLPfTF6hbA" },
     { id: 2, name: "Own 2", lat: 17.002361, lng: 81.770949, directionsLink: "https://maps.app.goo.gl/hemRu3Pn31WX3Dyg9" },
@@ -27,6 +27,7 @@ const stores: Store[] = [
     { id: 11, name: "Franchise Annavaram", lat: 17.2821239, lng: 82.4053274, directionsLink: "https://maps.app.goo.gl/TTkABajJ976EQWPG7" },
 ];
 
+// Utility to calculate distance
 function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
     const R = 6371; // km
     const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -39,37 +40,38 @@ function getDistance(lat1: number, lon1: number, lat2: number, lon2: number) {
     return R * (2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
 }
 
+// ✅ Exported function (can be reused in other components)
+export function handleFindNearest() {
+    if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const { latitude, longitude } = position.coords;
+
+            let nearest = stores[0];
+            let minDist = getDistance(latitude, longitude, nearest.lat, nearest.lng);
+
+            for (const store of stores) {
+                const dist = getDistance(latitude, longitude, store.lat, store.lng);
+                if (dist < minDist) {
+                    nearest = store;
+                    minDist = dist;
+                }
+            }
+
+            window.open(nearest.directionsLink, "_blank");
+        },
+        () => {
+            alert("Unable to fetch your location.");
+        }
+    );
+}
+
 const FindNearestStoreButton = () => {
     const [open, setOpen] = useState(false);
-
-    const handleFindNearest = () => {
-        if (!navigator.geolocation) {
-            alert("Geolocation is not supported by your browser.");
-            return;
-        }
-
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const { latitude, longitude } = position.coords;
-
-                let nearest = stores[0];
-                let minDist = getDistance(latitude, longitude, nearest.lat, nearest.lng);
-
-                for (const store of stores) {
-                    const dist = getDistance(latitude, longitude, store.lat, store.lng);
-                    if (dist < minDist) {
-                        nearest = store;
-                        minDist = dist;
-                    }
-                }
-
-                window.open(nearest.directionsLink, "_blank");
-            },
-            () => {
-                alert("Unable to fetch your location.");
-            }
-        );
-    };
 
     return (
         <div className="fixed bottom-8 left-8 z-50">
@@ -82,7 +84,7 @@ const FindNearestStoreButton = () => {
                     <img
                         src={oldlogoImg}
                         alt="Rose Street Logo"
-                        className="w-12 h-12 object-contain"
+                        className="w-12 h-12 object-contain coin-spin"
                     />
                 </button>
             )}
@@ -106,7 +108,7 @@ const FindNearestStoreButton = () => {
                             <img
                                 src={oldlogoImg}
                                 alt="Rose Street Logo"
-                                className="w-48 h-48 object-cover rounded-xl"
+                                className="w-40 h-40 object-cover rounded-xl"
                             />
                         </motion.div>
                         <h3 className="text-lg font-bold text-dark font-serif">

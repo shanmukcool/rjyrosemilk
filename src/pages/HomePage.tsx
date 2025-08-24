@@ -14,6 +14,8 @@ import {
   ExternalLink,
   ScanBarcode,
   Users,
+  Camera,
+  Sparkles,
 } from 'lucide-react';
 import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import RoseStreetButton from "../components/RoseStreetButton";
@@ -29,7 +31,7 @@ import OriginalImg from '../assets/design/original.png';
 import FssaiImg from '../assets/design/fssaisar.png';
 import dividerImg from '../assets/design/divider.png';
 import handcartImg from '../assets/design/handcart.png';
-import bridgeImg from '../assets/design/legacy2.png';
+import bridgeImg from '../assets/design/legacy.png';
 import RoseMilkSyrupImg from '../assets/products/rosemilksyrup.png';
 import RoseMilkImg from '../assets/products/rosemilk.png';
 import RosekovaImg from '../assets/products/rosekova.png';
@@ -43,11 +45,31 @@ import rxVdo from '../assets/videos/rx100.mp4';
 import karimaVdo from '../assets/videos/kwy.mp4';
 import ax4 from '../assets/videos/ax4.mp4';
 import localcustVdo from '../assets/videos/localcust.mp4';
-const icons = [hansindia, theweek, eenadu, sakshi];
+import pushkarImg from '../assets/tourism/pg.jpg';
 const HomePage = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollWidth, setScrollWidth] = useState(0);
 
+  const touristHighlights = [
+    {
+      title: 'Papikondalu Hills',
+      description: 'Breathtaking boat cruises through misty mountains',
+      image: 'https://papikondalu.net/assets/images/papi-kondalu-17-800x500.png',
+      color: 'rose-500'
+    },
+    {
+      title: 'Sacred Pushkar Ghat',
+      description: 'Holy bathing ghat on the banks of River Godavari',
+      image: pushkarImg,
+      color: 'mustard'
+    },
+    {
+      title: 'Maredumilli Forests',
+      description: 'Pristine waterfalls and eco-tourism paradise',
+      image: 'https://tripxl.com/blog/wp-content/uploads/2024/09/Amruthadhara-Waterfalls.jpg',
+      color: 'gold'
+    }
+  ];
   useEffect(() => {
     if (trackRef.current) {
       const firstSetWidth = trackRef.current.scrollWidth / 2; // width of one icon set
@@ -77,7 +99,7 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-[#fefdf4] ">
       <Header />
 
       {/* Hero Section */}
@@ -100,9 +122,9 @@ const HomePage = () => {
       </section>
 
       {/* Rose Milk Syrup Section */}
-      <section id="rose-milk-syrup" className="py-20 bg-white relative overflow-hidden">
+      <section id="rose-milk-syrup" className="py-20 relative overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-[#fefdf4] from-cream/40 via-white to-cream/20"></div>
+        <div className="absolute inset-0 from-cream/40 via-white to-cream/20"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[500px]">
@@ -182,16 +204,7 @@ const HomePage = () => {
 
       {/* Heritage Section */}
       <section className="relative w-full overflow-hidden">
-        {/* Content on Top (optional: can be placed above or below image) */}
-        {/* <div className="w-full h-full flex flex-col px-4 sm:px-6 lg:px-8 pointer-events-none">
-          <h1 className="text-5xl lg:text-6xl font-bold text-dark mb-6 font-serif">
-            Our Legacy
-          </h1>
 
-          <p className="text-xl lg:text-2xl text-dark font-serif">
-            From the Streets of Rajahmundry, With Love Since 1950
-          </p>
-        </div> */}
         {/* Full-Width Image */}
         <div className="w-full">
           <img
@@ -204,7 +217,7 @@ const HomePage = () => {
       </section>
 
       {/* Products Preview Section */}
-      <section id="products" className="py-20 bg-[#fefdf4] relative overflow-hidden">
+      <section id="products" className="py-20 relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -344,21 +357,7 @@ const HomePage = () => {
       </section>
 
       {/* Story Section */}
-      <section id="story" className="py-20 bg-cream relative overflow-hidden">
-
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-            backgroundSize: '50px 50px'
-          }}></div>
-        </div>
-        {/* Corner Decorations */}
-        <div className="absolute top-0 left-0 w-32 h-32 border-l-4 border-t-4 border-gold/40 border-double"></div>
-        <div className="absolute top-0 right-0 w-32 h-32 border-r-4 border-t-4 border-gold/40 border-double"></div>
-        <div className="absolute bottom-0 left-0 w-32 h-32 border-l-4 border-b-4 border-gold/40 border-double"></div>
-        <div className="absolute bottom-0 right-0 w-32 h-32 border-r-4 border-b-4 border-gold/40 border-double"></div>
-
+      <section id="story" className="py-20relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[600px]">
             <div className="order-2 lg:order-1 flex flex-col justify-center">
@@ -429,7 +428,7 @@ const HomePage = () => {
 
               <Link
                 to="/about/story"
-                className="text-rose-500 font-bold inline-flex items-center hover:text-dark transition-colors bg-white/50 px-6 py-3 rounded-full border border-gold/30 shadow-lg hover:shadow-xl font-serif"
+                className="text-rose-500 font-bold inline-flex items-center hover:text-dark transition-colors bg-white/50 px-6 py-3 rounded-full border border-gold/30 font-serif"
               >
                 <span>Discover Our Complete Story</span>
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -454,9 +453,7 @@ const HomePage = () => {
       </section>
 
       {/* News & Mentions Section */}
-      <section id="news-mentions" className="py-20 bg-white relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
+      <section id="news-mentions" className="py-20 relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -479,24 +476,31 @@ const HomePage = () => {
             </div>
           </div>
 
-          {/* Infinite Scroll News Icons */}
-          <div className="relative overflow-hidden w-full bg-white py-4 max-w-[1088px] mx-auto">
+          {/* Media Logos */}
+          <div className="relative w-full bg-white max-w-[1088px] mx-auto">
             <div
-              ref={trackRef}
-              className="flex gap-8"
-              style={{
-                "--scroll-width": `${scrollWidth}px`,
-                animation: `scroll ${scrollWidth / 50}s linear infinite`,
-              } as React.CSSProperties}
+              className="grid grid-cols-2 md:grid-cols-4 md:gap-4"
             >
-              {[...icons, ...icons].map((icon, index) => (
-                <img
-                  key={index}
-                  src={icon}
-                  alt="news-icon"
-                  className="w-60 h-60 object-contain flex-shrink-0"
-                />
-              ))}
+              <img
+                src={theweek}
+                alt="theweek"
+                className="w-full h-auto"
+              />
+              <img
+                src={hansindia}
+                alt="hansindia"
+                className="w-full h-auto"
+              />
+              <img
+                src={sakshi}
+                alt="sakshi"
+                className="order-4 md:order-3 w-full h-auto"
+              />
+              <img
+                src={eenadu}
+                alt="eenadu"
+                className="order-3 md:order-4 w-full h-auto"
+              />
             </div>
           </div>
 
@@ -516,17 +520,7 @@ const HomePage = () => {
       </section>
 
       {/* Awards Section */}
-      <section className="pt-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-              backgroundSize: '60px 60px',
-            }}
-          ></div>
-        </div>
+      <section className="pt-20 relative overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-rose-500 rounded-full px-6 py-3 mb-8 shadow-lg border-2 border-gold/50">
@@ -554,7 +548,7 @@ const HomePage = () => {
                   <img
                     src={zomatoImg}
                     alt="Zomato Award"
-                    className="bg-white w-auto h-full object-cover"
+                    className="bg-white w-full h-auto object-cover"
                   />
                 </div>
               </div>
@@ -565,7 +559,7 @@ const HomePage = () => {
                   <img
                     src={nidhiImg}
                     alt="Nidhi Award"
-                    className="w-auto h-full object-cover"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
               </div>
@@ -583,17 +577,8 @@ const HomePage = () => {
       </section>
 
       {/* Celebrity Visits Section */}
-      <section className="pt-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-              backgroundSize: '60px 60px',
-            }}
-          ></div>
-        </div>
+      <section className="pt-20 relative overflow-hidden">
+
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="inline-flex items-center bg-rose-500 rounded-full px-6 py-3 mb-8 shadow-lg border-2 border-gold/50">
@@ -619,7 +604,7 @@ const HomePage = () => {
                 <div className="aspect-[7/7] overflow-hidden">
                   <img
                     src={sarathkumar}
-                    alt="Rose Street Logo"
+                    alt="sarathkumar"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -630,8 +615,8 @@ const HomePage = () => {
                 <div className="w-auto h-full overflow-hidden">
                   <img
                     src={prithviraj}
-                    alt="Rose Street Logo"
-                    className="w-auto h-full object-cover"
+                    alt="prithviraj"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
               </div>
@@ -641,7 +626,7 @@ const HomePage = () => {
                 <div className="w-full h-auto overflow-hidden">
                   <img
                     src={hit2}
-                    alt="Rose Street Logo"
+                    alt="hit2"
                     className="w-full h-auto object-cover"
                   />
                 </div>
@@ -660,14 +645,7 @@ const HomePage = () => {
       </section>
 
       {/* Client Testimonials Section */}
-      <section className="py-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
+      <section className="py-20 relative overflow-hidden">
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
@@ -781,19 +759,76 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+      {/* Tourism Section */}
+      <section className="py-20 relative overflow-hidden" data-animate id="tourism">
 
-      {/* Rose Street Section */}
-      <section className="py-20 bg-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, #8B2635 2px, transparent 2px)`,
-              backgroundSize: '60px 60px',
-            }}
-          ></div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center bg-rose-500 rounded-full px-8 py-4 mb-8 shadow-xl border-2 border-gold/50">
+              <Camera className="h-6 w-6 text-cream mr-3" />
+              <span className="text-cream font-bold text-lg font-serif">Discover Rajahmundry</span>
+            </div>
+
+            <h2 className="text-4xl lg:text-5xl font-bold text-dark mb-8 font-serif leading-tight">
+              <span className="block text-rose-500 drop-shadow-lg">The Cultural &</span>
+              <span className="block text-mustard">Natural Heart of Godavari</span>
+            </h2>
+
+            {/* Decorative Divider */}
+            <div className="flex items-center justify-center mb-6">
+              <img
+                src={dividerImg}
+                alt="Section Separator"
+                className="h-12 w-auto"
+              />
+            </div>
+
+          </div>
+
+          {/* Tourist Highlights Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {touristHighlights.map((highlight, index) => {
+              return (
+                <div key={index} className={`bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-4 border-gold/30 group transform hover:-translate-y-3 '
+                }`} style={{ animationDelay: `${index * 300}ms` }}>
+                  {/* Image Container */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={highlight.image}
+                      alt={highlight.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-dark mb-3 font-serif">{highlight.title}</h3>
+                    <p className="text-dark/80 leading-relaxed">{highlight.description}</p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Call to Action */}
+          <div className="text-center">
+
+            <Link
+              to="/about/tourism"
+              className="bg-rose-500 text-cream px-12 py-5 rounded-full font-bold hover:bg-dark transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center border-2 border-gold/50 font-serif text-xl"
+            >
+              <Camera className="h-7 w-7 mr-4" />
+              Explore Rajahmundry
+              <Sparkles className="h-7 w-7 ml-4" />
+            </Link>
+          </div>
         </div>
+      </section>
+      {/* Rose Street Section */}
+      <section className="py-20 relative overflow-hidden">
 
         <h2 className="text-center text-4xl lg:text-5xl font-bold text-dark mb-6 font-serif leading-tight">
           <span className="block text-rose-500">Our Sub-Brand</span>
@@ -821,7 +856,7 @@ const HomePage = () => {
                     <img
                       src={newlogoImg}
                       alt="Rose Street Logo"
-                      className="w-full h-auto object-contain"
+                      className="w-[80%] h-auto object-contain mx-auto"
                     />
                   </div>
                 </div>
@@ -830,9 +865,9 @@ const HomePage = () => {
 
             {/* Right side - Content */}
             <div className={`lg:col-span-2 text-center lg:text-left transform transition-all duration-1000 delay-300}`}>
-              <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-6 font-serif leading-tight">
+              <h2 className="text-5xl lg:text-6xl font-bold text-dark mb-6 font-serif leading-tight">
                 <span className="block text-rose-500 drop-shadow-lg">Rose Street</span>
-              </h1>
+              </h2>
 
               <p className="text-xl lg:text-2xl text-dark/80 mb-8 max-w-4xl mx-auto lg:mx-0 leading-relaxed font-serif italic">
                 "Our rose-flavored drinkable desserts blend timeless tradition with modern indulgence"
@@ -866,7 +901,7 @@ const HomePage = () => {
         </div>
 
       </section>
-<FindNearestStoreButton />
+      <FindNearestStoreButton />
       <RoseStreetButton />
 
       <Footer />

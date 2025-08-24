@@ -5,6 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import RoseStreetButton from "../components/RoseStreetButton";
 import FindNearestStoreButton from "../components/FindNearestStoreButton";
+import FindNearestStoreCardButton from "../components/FindNearestStoreCardButton";
 import ipimg from "../assets/IP.jpg";
 import RoseMilkSyrup from "../assets/products/rosemilksyrup.png";
 import fssai from "../assets/design/fssai.png"; // Assuming you have an FSSAI image
@@ -155,21 +156,12 @@ const AuthenticatePage = () => {
                                 </p>
                             </div>
 
-                            {/* Grid 3 - Text Only */}
                             <div className="aspect-square bg-cream/70 grid items-center justify-center rounded-xl shadow-lg border border-gold/40 p-4 text-center gap-2">
                                 <Store className="h-20 w-20 m-auto" />
                                 <p className="text-dark/80 font-serif text-lg">
                                     ✔️ Buy only from authorized stores.
                                 </p>
-                                <a
-                                    href="https://rrosestreet.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center px-4 py-3 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2"
-                                >
-                                    <MapPin className="h-5 w-5 mr-2" />
-                                    Find Nearest Store
-                                </a>
+                                <FindNearestStoreCardButton />
                             </div>
 
                             {/* Grid 4 - Text Only */}
@@ -178,22 +170,22 @@ const AuthenticatePage = () => {
                                     ✔️ Order online from our trusted partners.
                                 </p>
                                 <a
-                                    href="https://www.amazon.in/dp/B0FCNH87JX?th=1"
+                                    href="https://www.indiamart.com/rose-street/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center px-4 py-3 bg-red-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2.5"
+                                >
+                                    <ShoppingCart className="h-5 w-5 mr-2" />
+                                    IndiaMart
+                                </a>
+                                <a
+                                    href="https://www.amazon.in/storefront?me=A2053PX3WBG6Y5&ref_=ssf_share"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2.5"
                                 >
                                     <ShoppingCart className="h-5 w-5 mr-2" />
                                     Amazon
-                                </a>
-                                <a
-                                    href="https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2.5"
-                                >
-                                    <ExternalLink className="h-5 w-5 mr-2" />
-                                    Swiggy
                                 </a>
                                 <a
                                     href="http://zoma.to/r/20698094"
@@ -203,6 +195,15 @@ const AuthenticatePage = () => {
                                 >
                                     <ExternalLink className="h-5 w-5 mr-2" />
                                     Zomato
+                                </a>
+                                <a
+                                    href="https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2.5"
+                                >
+                                    <ExternalLink className="h-5 w-5 mr-2" />
+                                    Swiggy
                                 </a>
                             </div>
                         </div>
@@ -252,7 +253,7 @@ const AuthenticatePage = () => {
                             </a>
                         </p>
                         <p className="mb-4 text-dark font-serif">
-                            📞 Call: <span className="font-semibold">+91 93471 49809</span>
+                            📞 Call: <span className="font-semibold">+91 62622 52519</span>
                         </p>
                         <p className="italic text-dark/70 font-serif">
                             Provide product photos, purchase details, and seller info for investigation.
@@ -284,7 +285,7 @@ const AuthenticatePage = () => {
                     </p>
                 </div>
             </section>
-<FindNearestStoreButton />
+            <FindNearestStoreButton />
             <RoseStreetButton />
             <Footer />
         </div>

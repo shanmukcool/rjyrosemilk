@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ExternalLink } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import newlogoImg from "../assets/newlogo.png";
-import newlogosmallImg from "../assets/rs.png"; // <-- make sure you have a smaller version, or reuse same logo
+import newlogosmallImg from "../assets/rs.png";
 
 const RoseStreetButton = () => {
   const [showRoseStreet, setShowRoseStreet] = useState(false);
@@ -18,7 +18,7 @@ const RoseStreetButton = () => {
           <img
             src={newlogosmallImg}
             alt="Rose Street Logo"
-            className="w-12 h-12 object-contain"
+            className="w-12 h-12 object-contain coin-spin" 
           />
         </button>
       )}
@@ -28,10 +28,9 @@ const RoseStreetButton = () => {
         <motion.div
           initial={{ opacity: 0, scale: 0.85, y: 40 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          // no `exit` prop => instant vanish on close
           transition={{ duration: 0.35, ease: "easeInOut" }}
-          className="bg-cream rounded-2xl text-center border-2 border-gold/30 rounded-2xl shadow-2xl py-5 px-0 flex flex-col items-center relative origin-bottom-right will-change-transform transform-gpu"
-          >
+          className="bg-cream rounded-2xl text-center border-2 border-gold/30 shadow-2xl py-5 px-4 flex flex-col items-center relative origin-bottom-right will-change-transform transform-gpu"
+        >
           {/* Logo */}
           <motion.div
             initial={{ scale: 0.2, opacity: 0, y: 8 }}
@@ -42,7 +41,7 @@ const RoseStreetButton = () => {
             <img
               src={newlogoImg}
               alt="Rose Street Logo"
-              className="w-48 h-20 object-cover rounded-xl"
+              className="w-40 h-20 object-cover rounded-xl"
             />
           </motion.div>
 
@@ -74,7 +73,6 @@ const RoseStreetButton = () => {
           </button>
         </motion.div>
       )}
-
     </div>
   );
 };
