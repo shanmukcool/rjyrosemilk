@@ -45,7 +45,10 @@ import rxVdo from '../assets/videos/rx100.mp4';
 import karimaVdo from '../assets/videos/kwy.mp4';
 import ax4 from '../assets/videos/ax4.mp4';
 import localcustVdo from '../assets/videos/localcust.mp4';
+import papikondaluImg from '../assets/tourism/pk.png';
+import maredumilliImg from '../assets/tourism/mm.jpg';
 import pushkarImg from '../assets/tourism/pg.jpg';
+
 const HomePage = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const [scrollWidth, setScrollWidth] = useState(0);
@@ -54,7 +57,7 @@ const HomePage = () => {
     {
       title: 'Papikondalu Hills',
       description: 'Breathtaking boat cruises through misty mountains',
-      image: 'https://papikondalu.net/assets/images/papi-kondalu-17-800x500.png',
+      image: papikondaluImg,
       color: 'rose-500'
     },
     {
@@ -66,7 +69,7 @@ const HomePage = () => {
     {
       title: 'Maredumilli Forests',
       description: 'Pristine waterfalls and eco-tourism paradise',
-      image: 'https://tripxl.com/blog/wp-content/uploads/2024/09/Amruthadhara-Waterfalls.jpg',
+      image: maredumilliImg,
       color: 'gold'
     }
   ];

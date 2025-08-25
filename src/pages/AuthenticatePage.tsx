@@ -188,6 +188,15 @@ const AuthenticatePage = () => {
                                     Amazon
                                 </a>
                                 <a
+                                    href="https://www.flipkart.com/product/p/itme?pid=FDMHF5A8T3A9VUYB"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center justify-center px-4 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif my-2.5"
+                                >
+                                    <ShoppingCart className="h-5 w-5 mr-2" />
+                                    Flipkart
+                                </a>
+                                <a
                                     href="http://zoma.to/r/20698094"
                                     target="_blank"
                                     rel="noopener noreferrer"

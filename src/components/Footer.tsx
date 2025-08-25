@@ -61,7 +61,7 @@ const Footer = () => {
                   </a>
 
                   <a
-                    href="https://www.facebook.com/rosemilk1950/"
+                    href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="rounded-md transition-all duration-300 overflow-hidden"
@@ -88,12 +88,12 @@ const Footer = () => {
 
                 {/* Rose Street Link */}
                 <div className="inline-flex items-center">
-                  <span className="text-white/90 mr-2 font-serif text-sm">Designed by</span>
+                  <span className="text-white/90 mr-2 font-serif text-sm">Developed by</span>
                   <a
                     href="https://shanmuk.me/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-gold font-bold hover:text-white transition-colors font-serif flex items-center text-sm"
+                    className="font-bold hover:text-white transition-colors font-serif flex items-center text-sm"
                   >
                     Shanmuk
                   </a>
@@ -195,7 +195,7 @@ const Footer = () => {
               <li>
                 <Link to="/franchise" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
-                  Partnership
+                  Franchise
                 </Link>
               </li>
             </ul>

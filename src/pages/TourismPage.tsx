@@ -1,19 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  MapPin,
   Calendar,
-  Camera,
   Mountain,
   Waves,
   TreePine,
   Star,
   Heart,
   Crown,
-  Sparkles,
-  Users,
   Award,
-  ArrowRight,
   Leaf,
   Building
 } from 'lucide-react';
@@ -21,6 +16,13 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
+import papikondaluImg from '../assets/tourism/pk.png';
+import maredumilliImg from '../assets/tourism/mm.jpg';
+import rampachodavaramImg from '../assets/tourism/rc.webp';
+import iskconImg from '../assets/tourism/it.png';
+import vadapalliImg from '../assets/tourism/kt.webp';
+import kadiyapulankaImg from '../assets/tourism/kn.jpg';
+import pushkaraluImg from '../assets/tourism/pushkaralu.jpg';
 import pushkarImg from '../assets/tourism/pg.jpg';
 
 const TourismPage = () => {
@@ -48,7 +50,7 @@ const TourismPage = () => {
     {
       id: 'papikondalu',
       name: 'Papi Kondalu (Papikondalu Hills)',
-      image: 'https://papikondalu.net/assets/images/papi-kondalu-17-800x500.png',
+      image: papikondaluImg,
       shortDescription: 'A breathtaking hill range where the Godavari river carves its way through misty green mountains.',
       longDescription: 'Papikondalu is often called the "Andhra Kashmir" for its scenic beauty. The serene boat cruise through the winding river valleys offers panoramic views, tribal hamlets, and untouched landscapes. It\'s the perfect escape for photographers, families, and explorers.',
       bestTime: 'October to March (winter & early summer for boat rides)',
@@ -60,7 +62,7 @@ const TourismPage = () => {
     {
       id: 'maredumilli',
       name: 'Maredumilli Forests & Waterfalls',
-      image: 'https://tripxl.com/blog/wp-content/uploads/2024/09/Amruthadhara-Waterfalls.jpg',
+      image: maredumilliImg,
       shortDescription: 'A nature lover\'s paradise filled with waterfalls, bamboo groves, and eco-tourism resorts.',
       longDescription: 'Maredumilli, nestled in the Eastern Ghats, is home to Amruthadhara and Jalatharangini waterfalls, coffee plantations, and bamboo forests. It\'s popular for eco-tourism stays and tribal delicacies like Bamboo Chicken. Travelers often club this with Rampachodavaram waterfalls.',
       bestTime: 'Monsoon & Winter (July–January)',
@@ -72,7 +74,7 @@ const TourismPage = () => {
     {
       id: 'rampachodavaram',
       name: 'Rampachodavaram Waterfalls',
-      image: 'https://holaciti.com/assets/Articles/1748571541_eSLJ0aSJv9.webp',
+      image: rampachodavaramImg,
       shortDescription: 'Cascading waterfalls deep inside lush green forests.',
       longDescription: 'Rampachodavaram is famed for its serene environment and thick forest backdrop. It\'s an offbeat spot where travelers trek, picnic, and enjoy pristine natural water streams. The tribal culture around adds a unique cultural dimension.',
       bestTime: 'July to December',
@@ -96,7 +98,7 @@ const TourismPage = () => {
     {
       id: 'vadapalli-temple',
       name: 'Vadapalli Sri Venkateswara Swamy Temple(Konaseema Tirupathi)',
-      image: 'https://www.tv5news.in/h-upload/2025/06/27/1591997-untitled-design-42.webp',
+      image: vadapalliImg,
       shortDescription: 'An ancient temple dedicated to Lord Venkateswara, amidst serene greenery.',
       longDescription: 'The Vadapalli temple is a spiritual escape located close to Rajahmundry. It\'s especially famous during festivals, where thousands gather for prayers. The temple architecture reflects a mix of Dravidian style and local traditions.',
       bestTime: 'Mornings, especially Saturdays & festivals',
@@ -108,7 +110,7 @@ const TourismPage = () => {
     {
       id: 'iskcon-temple',
       name: 'ISKCON Temple Rajahmundry',
-      image: 'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/01/6aaa98de2021f806f3465e20f4fd3242_1000x1000.png',
+      image: iskconImg,
       shortDescription: 'A spiritual retreat filled with bhajans, chants, and temple art.',
       longDescription: 'The ISKCON temple is one of Rajahmundry\'s prime attractions, known for its grand architecture and daily aartis. Visitors experience peace amidst soulful chanting of "Hare Krishna." The temple also hosts cultural programs and spiritual lectures.',
       bestTime: 'Morning aarti (6–8 am) or evening prayers (6–7 pm)',
@@ -120,7 +122,7 @@ const TourismPage = () => {
     {
       id: 'kadiyapulanka',
       name: 'Kadiyapulanka Nurseries',
-      image: 'https://i.ytimg.com/vi/GspvSwI0Rno/maxresdefault.jpg',
+      image: kadiyapulankaImg,
       shortDescription: 'Known as the "Florist\'s Paradise" with thousands of plant species.',
       longDescription: 'Kadiyapulanka is a horticultural hub where lush nurseries bloom with exotic flowers, medicinal plants, and decorative saplings. It\'s a colorful destination for nature lovers and gardening enthusiasts.',
       bestTime: 'Early Morning',
@@ -324,7 +326,7 @@ const TourismPage = () => {
               <div className="transform hover:scale-105 transition-transform duration-300 shadow-2xl relative overflow-hidden">
                 <div className="relative z-10 overflow-hidden rounded-2xl">
                   <img
-                    src="https://live.staticflickr.com/434/20246153092_ec3c8360ce_b.jpg"
+                    src={pushkaraluImg}
                     alt="Pushkaralu Festival"
                     className="w-full md:h-80 object-cover"
                     loading="lazy"

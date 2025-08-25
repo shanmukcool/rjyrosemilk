@@ -347,6 +347,24 @@ const ProductsPage = () => {
                     <div>
                       <h3 className="text-2xl font-bold text-dark mb-4 font-serif">Buy From</h3>
                       <div className="grid grid-cols-2 gap-4">
+                        <a
+                          href="https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-2" />
+                          Swiggy
+                        </a>
+                        <a
+                          href="http://zoma.to/r/20698094"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-center px-4 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
+                        >
+                          <ExternalLink className="h-5 w-5 mr-2" />
+                          Zomato
+                        </a>
                         <button className="flex items-center justify-center px-4 py-3 bg-red-500  text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif">
                           <a
                             href="https://www.indiamart.com/rose-street/"
@@ -369,24 +387,17 @@ const ProductsPage = () => {
                             Amazon
                           </a>
                         </button>
-                        <a
-                          href="https://www.swiggy.com/city/rajahmundry/rajahmundry-rosemilk-head-branch-east-godavari-dist-main-road-rest722250"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center px-4 py-3 bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
-                        >
-                          <ExternalLink className="h-5 w-5 mr-2" />
-                          Swiggy
-                        </a>
-                        <a
-                          href="http://zoma.to/r/20698094"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center justify-center px-4 py-3 bg-red-500 text-white rounded-lg hover:bg-red-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif"
-                        >
-                          <ExternalLink className="h-5 w-5 mr-2" />
-                          Zomato
-                        </a>
+                        <button className="flex items-center justify-center px-4 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600 transition-colors font-bold shadow-lg hover:shadow-xl transform hover:scale-105 font-serif">
+                          <a
+                            href="https://www.flipkart.com/product/p/itme?pid=FDMHF5A8T3A9VUYB"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex items-center"
+                          >
+                            <ShoppingCart className="h-5 w-5 mr-2" />
+                            Flipkart
+                          </a>
+                        </button>
                       </div>
                     </div>
                   </div>
