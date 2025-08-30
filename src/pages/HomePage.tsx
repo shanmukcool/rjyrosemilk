@@ -22,6 +22,7 @@ import RoseStreetButton from "../components/RoseStreetButton";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import zomatoImg from '../assets/awards/zomato.png';
+import dafneImg from '../assets/awards/received.jpg';
 import nidhiImg from '../assets/awards/nidhi-min.jpg';
 import prithviraj from '../assets/gallery/celebritys/20-min.png';
 import hit2 from '../assets/gallery/celebritys/5-min.jpg';
@@ -543,9 +544,19 @@ const HomePage = () => {
                 className="h-12 w-auto"
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-[auto_auto] sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* award 0 - Dafne */}
+              <div className="w-full sm:col-span-2">
+                <div className="w-auto h-full overflow-hidden">
+                  <img
+                    src={dafneImg}
+                    alt="Dafne Award"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
 
-              {/* award 1 */}
+              {/* award 1 - Zomato */}
               <div className="w-full">
                 <div className="w-auto h-full overflow-hidden">
                   <img
@@ -556,7 +567,7 @@ const HomePage = () => {
                 </div>
               </div>
 
-              {/* award 2 */}
+              {/* award 2 - Nidhi */}
               <div className="w-full">
                 <div className="w-auto h-full overflow-hidden">
                   <img
@@ -567,6 +578,7 @@ const HomePage = () => {
                 </div>
               </div>
             </div>
+
             <Link
               to="/awards"
               className="mt-8 bg-rose-500 text-cream px-10 py-4 rounded-full text-lg font-bold hover:bg-dark transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center border-2 border-gold/50 font-serif"
