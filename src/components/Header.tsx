@@ -365,7 +365,7 @@ const Header = () => {
                      <MapPinIcon className="h-4 w-4 text-mustard" />
                    </div>
                    <div>
-                     <div className="font-bold">Our Rajahmundry</div>
+                     <div className="font-bold">Discover Rajahmundry</div>
                    </div>
                  </Link>
                </div>
@@ -392,7 +392,7 @@ const Header = () => {
                   <ScanBarcode className="h-5 w-5" />
                 </div>
                 <div>
-                  <div className="font-bold">AUTHENTICATE</div>
+                  <div className="font-bold">CHECK AUTHENTICITY</div>
                 </div>
               </Link>
               <Link 

@@ -166,8 +166,8 @@ const TourismPage = () => {
           <div className="text-center mb-16">
 
             <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-8 font-serif leading-tight">
-              <span className="block text-rose-500 drop-shadow-lg">Rajahmundry</span>
-              <span className="block text-mustard">The Cultural Capital of AP</span>
+              <span className="block text-rose-500 drop-shadow-lg">Discover Rajahmundry</span>
+              <span className="block text-mustard">The Cultural Capital of Andhra Pradesh</span>
             </h1>
 
             {/* Decorative Divider */}

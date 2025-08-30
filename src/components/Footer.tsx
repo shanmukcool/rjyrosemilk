@@ -5,6 +5,7 @@ import supplychainVideo from '../assets/videos/life.mp4';
 import instaLogo from "../assets/design/connect/instagram.png";
 import fbLogo from "../assets/design/connect/facebook.png";
 import phoneLogo from "../assets/design/connect/phone.png";
+import gmailLogo from "../assets/design/connect/gmail.png";
 import whatsappLogo from "../assets/design/connect/whatsapp.png";
 
 const Footer = () => {
@@ -43,61 +44,96 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex space-x-4 mb-6">
-              <div className="mb-8">
+
+            <div className="flex flex-col space-y-6 mb-6">
+              <div>
                 <h4 className="text-lg font-semibold text-white mb-4 font-serif flex items-center">
                   <Heart className="h-5 w-5 text-gold mr-2" />
                   Connect
                 </h4>
 
-                <div className="flex space-x-4 mb-6">
-                  <a
-                    href="https://www.instagram.com/rajahmundryrosemilkoffl/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-md transition-all duration-300 overflow-hidden"
-                  >
-                    <img src={instaLogo} alt="Instagram" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-
-                  <a
-                    href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-md transition-all duration-300 overflow-hidden"
-                  >
-                    <img src={fbLogo} alt="Facebook" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-
+                {/* Contact links */}
+                <div className="flex flex-col space-y-3">
                   <a
                     href="tel:+916262252519"
-                    target='_blank'
-                    className="rounded-md transition-all duration-300 overflow-hidden"
-                  >
-                    <img src={phoneLogo} alt="Phone" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-
-                  <a
-                    href="https://wa.me/+916262252519"
-                    target='_blank'
-                    className="rounded-md transition-all duration-300 overflow-hidden"
-                  >
-                    <img src={whatsappLogo} alt="Whatsapp" className="h-10 w-10 group-hover:scale-110 transition-transform duration-300" />
-                  </a>
-                </div>
-
-                {/* Rose Street Link */}
-                <div className="inline-flex items-center">
-                  <span className="text-white/90 mr-2 font-serif text-sm">Developed by</span>
-                  <a
-                    href="https://shanmuk.me/"
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-bold hover:text-white transition-colors font-serif flex items-center text-sm"
+                    className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
                   >
-                    Shanmuk
+                    <img
+                      src={phoneLogo}
+                      alt="Phone"
+                      className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <span className="text-white">+91 62622 52519</span>
+                  </a>
+
+                  <a
+                    href="mailto:rishik@rrosestreet.com"
+                    target="_blank"
+                    className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
+                  >
+                    <img
+                      src={gmailLogo}
+                      alt="Email"
+                      className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                    />
+                    <span className="text-white">rishik@rrosestreet.com</span>
                   </a>
                 </div>
+              </div>
+
+              {/* Social Links */}
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/rajahmundryrosemilkoffl/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    src={instaLogo}
+                    alt="Instagram"
+                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    src={fbLogo}
+                    alt="Facebook"
+                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+
+                <a
+                  href="https://wa.me/+916262252519"
+                  target="_blank"
+                  className="rounded-md transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    src={whatsappLogo}
+                    alt="Whatsapp"
+                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+              </div>
+
+              {/* Credits */}
+              <div className="inline-flex items-center">
+                <span className="text-white/90 mr-2 font-serif text-sm">Developed by</span>
+                <a
+                  href="https://shanmuk.me/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-bold hover:text-white transition-colors font-serif flex items-center text-sm"
+                >
+                  Shanmuk
+                </a>
               </div>
             </div>
 
@@ -165,7 +201,7 @@ const Footer = () => {
               <li>
                 <Link to="/about/tourism" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
-                  Our Rajahmundry
+                  Discover Rajahmundry
                 </Link>
               </li>
               <li>
@@ -177,7 +213,7 @@ const Footer = () => {
               <li>
                 <Link to="/authenticate" className="flex items-center hover:text-gold transition-all duration-300 group font-serif">
                   <div className="w-2 h-2 bg-gold rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"></div>
-                  Authenticate
+                  Check Authenticity
                 </Link>
               </li>
               <li>
@@ -205,7 +241,7 @@ const Footer = () => {
           <div className="relative">
             <div className="flex items-center mb-6">
               <MapPin className="h-5 w-5 text-gold mr-2" />
-              <h3 className="text-lg font-semibold text-white font-serif">Our Location</h3>
+              <h3 className="text-lg font-semibold text-white font-serif">Contact us</h3>
             </div>
             <div className="rounded-xl overflow-hidden border-2 border-gold/30 shadow-xl">
               <iframe
