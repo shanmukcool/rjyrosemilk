@@ -10,10 +10,13 @@ import {
   Crown,
   Award,
   Leaf,
-  Building
+  Building,
+  Phone
 } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import RoseStreetButton from "../components/RoseStreetButton";
+import FindNearestStoreButton from "../components/FindNearestStoreButton";
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
 import papikondaluImg from '../assets/tourism/pk.png';
@@ -188,7 +191,8 @@ const TourismPage = () => {
       </section>
 
       {/* Featured Tourist Places Section */}
-      <section id="featured-places" className="py-20 bg-white relative overflow-hidden">
+      <section id="featured-places" className="py-20 bg
+      -white relative overflow-hidden">
         {/* Background */}
         <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
 
@@ -298,13 +302,13 @@ const TourismPage = () => {
               </h2>
 
               {/* Decorative Divider */}
-            <div className="mb-4">
-              <img
-                src={dividerImg}
-                alt="Section Separator"
-                className="h-12 w-auto"
-              />
-            </div>
+              <div className="mb-4">
+                <img
+                  src={dividerImg}
+                  alt="Section Separator"
+                  className="h-12 w-auto"
+                />
+              </div>
 
               <div className="bg-cream/50 border-l-4 border-rose-500 p-6 rounded-r-lg mb-6 shadow-lg">
                 <p className="text-xl text-dark font-bold font-serif mb-4">
@@ -353,13 +357,13 @@ const TourismPage = () => {
           </h2>
 
           {/* Decorative Divider */}
-            <div className="flex items-center justify-center mb-8">
-              <img
-                src={dividerImg}
-                alt="Section Separator"
-                className="h-16 w-auto"
-              />
-            </div>
+          <div className="flex items-center justify-center mb-8">
+            <img
+              src={dividerImg}
+              alt="Section Separator"
+              className="h-16 w-auto"
+            />
+          </div>
 
           <div className="bg-cream/10 backdrop-blur-sm border-l-4 border-gold p-8 rounded-r-lg shadow-xl border-2 border-gold/30 mb-12">
             <p className="text-2xl lg:text-3xl text-cream/95 leading-relaxed font-serif">
@@ -367,28 +371,25 @@ const TourismPage = () => {
             </p>
           </div>
 
-          {/* <div className="grid md:grid-cols-2 gap-6">
-            <Link
-              to="/stores"
-              className="bg-cream text-rose-500 px-10 py-4 rounded-full font-bold hover:bg-white transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center border-2 border-gold/50 font-serif text-lg"
+          <div className="text-center bg-cream text-rose-500 px-10 py-8 rounded-2xl shadow-xl border-2 border-gold/50 max-w-2xl mx-auto">
+            <p className="text-2xl md:text-3xl font-bold font-serif mb-4">
+              Planning a Trip to Rajahmundry?
+            </p>
+            <p className="text-lg md:text-xl font-serif mb-6">
+              Call Our Traveller Support for Itineraries, Sightseeing & Heritage Info
+            </p>
+            <a
+              href="tel:+919945107005"
+              className="text-xl md:text-2xl font-extrabold text-gold hover:underline hover:text-rose-600 transition-colors inline-flex items-center gap-2"
             >
-              <Heart className="h-6 w-6 mr-3" />
-              Taste Authentic Rose Milk
-              <Sparkles className="h-6 w-6 ml-3" />
-            </Link>
+              <Phone className="h-5 w-5 text-gold mr-2" /> +91 9945 107005
+            </a>
+          </div>
 
-            <Link
-              to="/about/story"
-              className="border-2 border-cream text-cream px-10 py-4 rounded-full font-bold hover:bg-cream hover:text-rose-500 transition-all duration-300 transform hover:scale-105 shadow-xl hover:shadow-2xl inline-flex items-center justify-center font-serif text-lg"
-            >
-              <Users className="h-6 w-6 mr-3" />
-              Our Heritage Story
-              <ArrowRight className="h-6 w-6 ml-3" />
-            </Link>
-          </div> */}
         </div>
       </section>
-
+      <FindNearestStoreButton />
+      <RoseStreetButton />
       <Footer />
     </div>
   );

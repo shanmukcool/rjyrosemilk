@@ -1,11 +1,9 @@
 import { Link } from 'react-router-dom';
-import { Instagram, MapPin, Facebook, Phone, Crown, Sparkles, Heart, Star, ExternalLink } from 'lucide-react';
+import { Mail, Phone, Crown, Sparkles, Heart, Star } from 'lucide-react';
 import OldLogo from '../assets/oldlogo1.png';
 import supplychainVideo from '../assets/videos/life.mp4';
 import instaLogo from "../assets/design/connect/instagram.png";
 import fbLogo from "../assets/design/connect/facebook.png";
-import phoneLogo from "../assets/design/connect/phone.png";
-import gmailLogo from "../assets/design/connect/gmail.png";
 import whatsappLogo from "../assets/design/connect/whatsapp.png";
 
 const Footer = () => {
@@ -45,42 +43,10 @@ const Footer = () => {
 
             {/* Social Links */}
 
-            <div className="flex flex-col space-y-6 mb-6">
-              <div>
-                <h4 className="text-lg font-semibold text-white mb-4 font-serif flex items-center">
-                  <Heart className="h-5 w-5 text-gold mr-2" />
-                  Connect
-                </h4>
-
-                {/* Contact links */}
-                <div className="flex flex-col space-y-3">
-                  <a
-                    href="tel:+916262252519"
-                    target="_blank"
-                    className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
-                  >
-                    <img
-                      src={phoneLogo}
-                      alt="Phone"
-                      className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <span className="text-white">+91 62622 52519</span>
-                  </a>
-
-                  <a
-                    href="mailto:rishik@rrosestreet.com"
-                    target="_blank"
-                    className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
-                  >
-                    <img
-                      src={gmailLogo}
-                      alt="Email"
-                      className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
-                    />
-                    <span className="text-white">rishik@rrosestreet.com</span>
-                  </a>
-                </div>
-              </div>
+            <div className="flex flex-col space-y-6 ">
+              <h4 className="text-lg font-semibold text-white font-serif flex items-center">
+                Connect
+              </h4>
 
               {/* Social Links */}
               <div className="flex space-x-4">
@@ -122,19 +88,6 @@ const Footer = () => {
                   />
                 </a>
               </div>
-
-              {/* Credits */}
-              <div className="inline-flex items-center">
-                <span className="text-white/90 mr-2 font-serif text-sm">Developed by</span>
-                <a
-                  href="https://shanmuk.me/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="font-bold hover:text-white transition-colors font-serif flex items-center text-sm"
-                >
-                  Shanmuk
-                </a>
-              </div>
             </div>
 
           </div>
@@ -142,7 +95,6 @@ const Footer = () => {
           {/* Products Section */}
           <div className="relative">
             <div className="flex items-center mb-6">
-              <Star className="h-5 w-5 text-gold mr-2" />
               <h3 className="text-lg font-semibold text-white font-serif">Our Products</h3>
             </div>
             <ul className="space-y-3 text-white/80">
@@ -176,7 +128,6 @@ const Footer = () => {
           {/* Quick Links */}
           <div className="relative">
             <div className="flex items-center mb-6">
-              <Heart className="h-5 w-5 text-gold mr-2" />
               <h3 className="text-lg font-semibold text-white font-serif">Quick Links</h3>
             </div>
             <ul className="space-y-3 text-white/80">
@@ -240,9 +191,30 @@ const Footer = () => {
           {/* Location Section */}
           <div className="relative">
             <div className="flex items-center mb-6">
-              <MapPin className="h-5 w-5 text-gold mr-2" />
               <h3 className="text-lg font-semibold text-white font-serif">Contact us</h3>
             </div>
+
+            {/* Contact links */}
+            <div className="flex flex-col space-y-3 mb-4">
+              <a
+                href="tel:+916262252519"
+                target="_blank"
+                className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
+              >
+                <Phone className="h-5 w-5 text-gold mr-2" />
+                <span className="text-white text-sm">+91 62622 52519</span>
+              </a>
+
+              <a
+                href="mailto:rishik@rrosestreet.com"
+                target="_blank"
+                className="rounded-md transition-all duration-300 overflow-hidden flex items-center gap-2"
+              >
+                <Mail className="h-5 w-5 text-gold mr-2" />
+                <span className="text-white text-sm font-serif">rishik@rrosestreet.com</span>
+              </a>
+            </div>
+
             <div className="rounded-xl overflow-hidden border-2 border-gold/30 shadow-xl">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1770.5829052106255!2d81.7688253222403!3d17.00321895318575!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37a519b32f8c3b%3A0x997e0113d2b11ac7!2sRajahmundry%20Rose%20Milk%20Center%20-%2075%20years!5e1!3m2!1sen!2sin!4v1751438964219!5m2!1sen!2sin"
