@@ -23,6 +23,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import zomatoImg from '../assets/awards/zomato.png';
 import dafneImg from '../assets/awards/received.jpg';
+import toia from '../assets/awards/toiar.jpg';
 import nidhiImg from '../assets/awards/nidhi-min.jpg';
 import prithviraj from '../assets/gallery/celebritys/20-min.png';
 import hit2 from '../assets/gallery/celebritys/5-min.jpg';
@@ -37,6 +38,8 @@ import RoseMilkSyrupImg from '../assets/products/rosemilksyrup.png';
 import RoseMilkImg from '../assets/products/rosemilk.png';
 import RosekovaImg from '../assets/products/rosekova.png';
 import SemiaImg from '../assets/products/rosesemia.png';
+import toi from '../assets/np/toi.jpg';
+import tv9 from '../assets/np/tv9.jpg';
 import sakshi from '../assets/np/sicon.png';
 import eenadu from '../assets/np/eicon.png';
 import hansindia from '../assets/np/hiicon.png';
@@ -481,29 +484,44 @@ const HomePage = () => {
           </div>
 
           {/* Media Logos */}
-          <div className="relative w-full bg-white max-w-[1088px] mx-auto">
+          <div className="relative w-full bg-white max-w-[800px] mx-auto">
             <div
-              className="grid grid-cols-2 md:grid-cols-4 md:gap-4"
+              className="grid grid-cols-2 md:grid-cols-3 md:gap-4 place-items-center"
             >
+              
+              <img
+                src={toi}
+                alt="times of india"
+                className="w-full h-auto"
+
+              />
+              
+              <img
+                src={tv9}
+                alt="tv9 telugu"
+                className="w-full h-auto"
+
+              />
               <img
                 src={theweek}
                 alt="theweek"
-                className="w-full h-auto"
+                className="order-4 md:order-3 w-full h-auto"
+
               />
               <img
                 src={hansindia}
                 alt="hansindia"
-                className="w-full h-auto"
+                className="order-3 md:order-4 w-full h-auto"
               />
               <img
                 src={sakshi}
                 alt="sakshi"
-                className="order-4 md:order-3 w-full h-auto"
+                className="order-5 w-full h-auto"
               />
               <img
                 src={eenadu}
                 alt="eenadu"
-                className="order-3 md:order-4 w-full h-auto"
+                className="order-6 w-full h-auto"
               />
             </div>
           </div>
@@ -545,8 +563,18 @@ const HomePage = () => {
               />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {/* award 0 - toi */}
+              <div className="w-full sm:col-span-1">
+                <div className="w-auto h-full overflow-hidden">
+                  <img
+                    src={toia}
+                    alt="Times of India Award"
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              </div>
               {/* award 0 - Dafne */}
-              <div className="w-full sm:col-span-2">
+              <div className="w-full sm:col-span-1">
                 <div className="w-auto h-full overflow-hidden">
                   <img
                     src={dafneImg}
@@ -804,7 +832,7 @@ const HomePage = () => {
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {touristHighlights.map((highlight, index) => {
               return (
-                <div key={index} className={`bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-4 border-gold/30 group transform hover:-translate-y-3 '
+                <div key={index} className={`rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-4 border-gold/30 group transform hover:-translate-y-3 '
                 }`} style={{ animationDelay: `${index * 300}ms` }}>
                   {/* Image Container */}
                   <div className="relative h-48 overflow-hidden">

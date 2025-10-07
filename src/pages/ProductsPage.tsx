@@ -23,25 +23,6 @@ import niloferImg from '../assets/ingredients/nilofer.jpg';
 import gaozabanImg from '../assets/ingredients/gaozaban.jpg';
 
 const ProductsPage = () => {
-  const [visibleSections, setVisibleSections] = useState(new Set());
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisibleSections(prev => new Set([...prev, entry.target.id]));
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
-
-    const sections = document.querySelectorAll('[data-animate]');
-    sections.forEach(section => observer.observe(section));
-
-    return () => observer.disconnect();
-  }, []);
 
   // Featured product (Rose Milk Syrup) - unchanged
   const specialProduct = {
@@ -184,7 +165,7 @@ const ProductsPage = () => {
         />
       </div>
       {/* Featured Product - Rose Milk Syrup with Heritage Styling - UNCHANGED */}
-      <section className="py-16 bg-cream relative overflow-hidden" data-animate id="featured-product">
+      <section className="py-16 bg-cream relative overflow-hidden" id="featured-product">
 
         {/* Vintage Background Pattern */}
         <div className="absolute inset-0 opacity-10">
@@ -209,8 +190,8 @@ const ProductsPage = () => {
             </div>
 
             {/* Heritage Radial Ingredient Layout */}
-            <div className={`relative w-full max-w-5xl mx-auto flex items-center justify-center mb-8 overflow-visible transition-all duration-1000 ${visibleSections.has('featured-product') ? 'animate-spin-slow' : ''
-              }`} style={{ height: '80vmin' }}>
+            <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center mb-8 overflow-visible transition-all duration-1000 animate-spin-slow"
+               style={{ height: '80vmin' }}>
               {/* Central Rose Milk Syrup Bottle with Heritage Frame */}
               <div className="absolute z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-2 flex items-center justify-center" style={{ width: '30vmin' }}>
                 <div className="relative">
@@ -219,9 +200,7 @@ const ProductsPage = () => {
                     <img
                       src={specialProduct.image}
                       alt={specialProduct.name}
-                      className={`max-w-full max-h-full object-contain drop-shadow-2xl transition-transform duration-1000 ${visibleSections.has('featured-product') ? 'animate-spin-reverse' : ''
-                        }`}
-                    />
+                      className="max-w-full max-h-full object-contain drop-shadow-2xl transition-transform duration-1000 animate-spin-reverse"/>
                   </div>
                 </div>
               </div>
@@ -241,8 +220,8 @@ const ProductsPage = () => {
                       height: '16vmin'
                     }}
                   >
-                    <div className={`absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-between text-center cursor-pointer hover:scale-110 transition-transform duration-300 group ${visibleSections.has('featured-product') ? 'animate-spin-reverse' : ''
-                      }`}>
+                    <div className="absolute -translate-x-1/2 -translate-y-1/2 flex flex-col items-center justify-between text-center cursor-pointer hover:scale-110 transition-transform duration-300 group animate-spin-reverse"
+                      >
                       {/* Heritage Circular Icon Background */}
                       <div className="flex items-center justify-center" style={{ width: '12vmin', height: '12vmin' }}>
                         <img src={ingredient.src} alt={`${ingredient.name} Icon`} className="w-full h-full object-contain" />

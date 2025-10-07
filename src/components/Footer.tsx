@@ -4,6 +4,7 @@ import OldLogo from '../assets/oldlogo1.png';
 import supplychainVideo from '../assets/videos/life.mp4';
 import instaLogo from "../assets/design/connect/instagram.png";
 import fbLogo from "../assets/design/connect/facebook.png";
+import ytLogo from "../assets/design/connect/youtube.png";
 import whatsappLogo from "../assets/design/connect/whatsapp.png";
 
 const Footer = () => {
@@ -49,7 +50,32 @@ const Footer = () => {
               </h4>
 
               {/* Social Links */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 items-center">
+                
+                <a
+                  href="https://wa.me/+916262252519"
+                  target="_blank"
+                  className="rounded-md transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    src={whatsappLogo}
+                    alt="Whatsapp"
+                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
+                
+                <a
+                  href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-md transition-all duration-300 overflow-hidden"
+                >
+                  <img
+                    src={fbLogo}
+                    alt="Facebook"
+                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                  />
+                </a>
                 <a
                   href="https://www.instagram.com/rajahmundryrosemilkoffl/"
                   target="_blank"
@@ -64,29 +90,19 @@ const Footer = () => {
                 </a>
 
                 <a
-                  href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
+                  href="https://www.youtube.com/@RoseStreet_DrinkableDesserts"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-md transition-all duration-300 overflow-hidden"
                 >
+                  
                   <img
-                    src={fbLogo}
-                    alt="Facebook"
-                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
+                    src={ytLogo}
+                    alt="Youtube"
+                    className="my-auto h-auto w-10 group-hover:scale-110 transition-transform duration-300"
                   />
                 </a>
 
-                <a
-                  href="https://wa.me/+916262252519"
-                  target="_blank"
-                  className="rounded-md transition-all duration-300 overflow-hidden"
-                >
-                  <img
-                    src={whatsappLogo}
-                    alt="Whatsapp"
-                    className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
-                  />
-                </a>
               </div>
             </div>
 
