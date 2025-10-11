@@ -21,6 +21,7 @@ import venkatesh from '../assets/gallery/celebritys/1-min.jpg';
 import venkatesh2 from '../assets/gallery/celebritys/1.png';
 import cbn from '../assets/gallery/celebritys/2cbn.png';
 import jagan from '../assets/gallery/celebritys/17jagan.jpg';
+import toiar from '../assets/awards/toiar.jpg';
 import rajeshkumar from '../assets/gallery/celebritys/2-min.jpg';
 import arjunreddy from '../assets/gallery/celebritys/3-min.jpg';
 import naveen from '../assets/gallery/celebritys/4-min.jpg';
@@ -44,14 +45,6 @@ import sidarth from '../assets/gallery/celebritys/19-min.jpg';
 import prithviraj from '../assets/gallery/celebritys/20-min.png';
 import gscImg from '../assets/stores/1950.png';
 import rrgImg from '../assets/stores/1980.png';
-// { id: 'all', name: 'All Photos', icon: Camera },
-// { id: 'videos', name: 'Videos', icon: Video },
-// { id: 'celebrity', name: 'Celebrity Visits', icon: Star },
-// { id: 'vintage', name: 'Vintage Days', icon: Clock },
-// { id: 'behind-scenes', name: 'Behind the Scenes', icon: Users },
-// { id: 'customers', name: 'Customer Moments', icon: Heart },
-// { id: 'events', name: 'Special Events', icon: Award }
-
 import patternImg from '../assets/design/pattern.png';
 import dividerImg from '../assets/design/divider.png';
 import karimaposter from '../assets/videos/poster/karmiaposter.png'
@@ -75,12 +68,15 @@ const galleryImages: GalleryImage[] = [
   // Celebrity Visits
   {
     id: 1,
-    src: venkatesh,
-    alt: "Victory Venkatesh",
-    category: ['celebrity', 'events'],
-    title: "Victory Venkatesh",
-    description: "New Logo Reveal",
-    date: "March 15, 2024"
+    src: toiar,
+    alt: "times of india Business Excellence Award",
+    category: ['videos', 'celebrity', 'events'],
+    title: "Times of India Business Excellence Award 2025",
+    description: "Times of India Business Excellence Award 2025",
+    date: "September 29, 2025",
+    isVideo: true,
+    isYouTubeEmbed: true,
+    videoUrl: "https://www.youtube.com/embed/p3B__hBe6Pc?start=898&autoplay=1&mute=0&controls=1&loop=1&playlist=p3B__hBe6Pc"
   },
   {
     id: 2,
@@ -462,6 +458,15 @@ const galleryImages: GalleryImage[] = [
     title: "Rosemilk Ramu Garu",
     description: "Silver jubliee completion",
     date: "March 15, 2000"
+  },
+  {
+    id: 40,
+    src: venkatesh,
+    alt: "Victory Venkatesh",
+    category: ['celebrity', 'events'],
+    title: "Victory Venkatesh",
+    description: "New Logo Reveal",
+    date: "March 15, 2024"
   },
 ];
 

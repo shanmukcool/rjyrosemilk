@@ -19,6 +19,7 @@ import a9 from "../assets/awards/IMG-20230204-WA0023-min.jpg";
 import a10 from "../assets/awards/IMG_20250730_220202-min.jpg";
 import zomatoAward from "../assets/awards/Zomato Award-min.jpg";
 import nidhiPledge from "../assets/awards/nidhi-min.jpg";
+import toia from '../assets/awards/toia.jpg';
 
 interface AwardItem {
   id: number;
@@ -137,222 +138,240 @@ const awardsData: AwardItem[] = [
     description: "Pledge for commitment towards safe & honourable tourism and sustainable tourism, issued by the Ministry of Tourism, Government of India, to RAJAHMUNDRY ROSEMLK MANUFACTURERS AND DISTRIBUTION PRIVATE LIMITED.",
     date: "February 24, 2025",
     category: "tourism/sustainability"
+  },
+  {
+    id: 13,
+    src: toia,
+    alt: "Times of India Business Excellence Award 2025",
+    title: "Times of India Business Excellence Award 2025",
+    description: "Times of India Business Excellence Award 2025 to Rajahmundry Rosemilk for excellence in business and contribution to the community.",
+    date: "September 24, 2025",
+    category: "business excellence"
   }
 ];
-const AwardsPage: React.FC = () => {
-  const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
-  const [showLightbox, setShowLightbox] = useState(false);
+const AwardsPage: React
+  .FC = () => {
+    const [selectedAward, setSelectedAward] = useState<AwardItem | null>(null);
+    const [showLightbox, setShowLightbox] = useState(false);
 
-  const openLightbox = (award: AwardItem) => {
-    setSelectedAward(award);
-    setShowLightbox(true);
-    document.body.style.overflow = 'hidden';
-  };
+    const openLightbox = (award: AwardItem) => {
+      setSelectedAward(award);
+      setShowLightbox(true);
+      document.body.style.overflow = 'hidden';
+    };
 
-  const closeLightbox = () => {
-    setShowLightbox(false);
-    setSelectedAward(null);
-    document.body.style.overflow = 'unset';
-  };
+    const closeLightbox = () => {
+      setShowLightbox(false);
+      setSelectedAward(null);
+      document.body.style.overflow = 'unset';
+    };
 
-  const navigateAward = (direction: 'prev' | 'next') => {
-    if (!selectedAward) return;
+    const navigateAward = (direction: 'prev' | 'next') => {
+      if (!selectedAward) return;
 
-    const currentIndex = awardsData.findIndex(award => award.id === selectedAward.id);
-    let newIndex;
+      const currentIndex = awardsData.findIndex(award => award.id === selectedAward.id);
+      let newIndex;
 
-    if (direction === 'prev') {
-      newIndex = currentIndex > 0 ? currentIndex - 1 : awardsData.length - 1;
-    } else {
-      newIndex = currentIndex < awardsData.length - 1 ? currentIndex + 1 : 0;
-    }
+      if (direction === 'prev') {
+        newIndex = currentIndex > 0 ? currentIndex - 1 : awardsData.length - 1;
+      } else {
+        newIndex = currentIndex < awardsData.length - 1 ? currentIndex + 1 : 0;
+      }
 
-    const newAward = awardsData[newIndex];
-    setSelectedAward(newAward);
-  };
+      const newAward = awardsData[newIndex];
+      setSelectedAward(newAward);
+    };
 
-  return (
-    <div className="min-h-screen bg-cream">
-      <Header />
+    return (
+      <div className="min-h-screen bg-cream">
+        <Header />
 
-      {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="flex items-center text-sm text-dark/70">
-          <Link to="/" className="hover:text-rose-500 transition-colors">Home</Link>
-          <span className="mx-2">/</span>
-          <span className="text-rose-500 font-medium">Awards</span>
-        </div>
-      </div>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 bg-white">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
-
-        {/* Ornamental Pattern Background */}
-        <div className="absolute inset-0 pointer-events-none opacity-25">
-          <div
-            className="w-full h-full"
-            style={{
-              backgroundImage: `url(${patternImg})`,
-              backgroundRepeat: "repeat",
-              backgroundSize: "250px", // adjust this value for smaller or larger repetition
-            }}
-          ></div>
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center bg-rose-500 rounded-full px-8 py-4 mb-8 shadow-xl border-2 border-gold/50">
-              <Trophy className="h-6 w-6 text-cream mr-3" />
-              <span className="text-cream font-bold text-lg font-serif">Our Achievements</span>
-            </div>
-
-            <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-8 font-serif leading-tight">
-              <span className="block text-rose-500 drop-shadow-lg">Awards &</span>
-              <span className="block text-mustard">Recognitions</span>
-            </h1>
-
-            {/* Decorative Divider */}
-            <div className="flex items-center justify-center mb-8">
-              <img
-                src={dividerImg}
-                alt="Section Separator"
-                className="h-16 w-auto"
-              />
-            </div>
-
-            <div className="inline-flex items-center bg-gradient-to-r from-rose-500 to-mustard text-white rounded-full px-8 py-4 mb-6 shadow-2xl border-4 border-gold font-serif transition-transform duration-300 hover:scale-105">
-              <Crown className="h-6 w-6 text-white mr-3 drop-shadow-md" />
-              <span className="text-lg font-bold italic tracking-wide drop-shadow-sm">
-                "Excellence recognized across 75 years of dedication."
-              </span>
-            </div>
-
-
-            <p className="text-xl lg:text-2xl text-dark/80 max-w-4xl mx-auto leading-relaxed font-serif">
-              Our commitment to quality, tradition, and community service has been recognized by various organizations,
-              government bodies, and industry leaders throughout our journey.
-            </p>
+        {/* Breadcrumb */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center text-sm text-dark/70">
+            <Link to="/" className="hover:text-rose-500 transition-colors">Home</Link>
+            <span className="mx-2">/</span>
+            <span className="text-rose-500 font-medium">Awards</span>
           </div>
         </div>
-      </section>
 
-      {/* Awards Stats */}
-      <section className="py-16 bg-rose-500 text-cream relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
-            backgroundSize: '60px 60px'
-          }}></div>
-        </div>
+        {/* Hero Section */}
+        <section className="relative overflow-hidden py-20 bg-white">
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="grid md:grid-cols-4 gap-8 text-center">
-            <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
-              <div className="text-5xl font-bold mb-4 font-serif">15+</div>
-              <div className="text-cream/90 font-serif text-lg">Awards Received</div>
-            </div>
-            <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
-              <div className="text-5xl font-bold mb-4 font-serif">75+</div>
-              <div className="text-cream/90 font-serif text-lg">Years of Excellence</div>
-            </div>
-            <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
-              <div className="text-5xl font-bold mb-4 font-serif">5</div>
-              <div className="text-cream/90 font-serif text-lg">Government Recognitions</div>
-            </div>
-            <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
-              <div className="text-5xl font-bold mb-4 font-serif">3</div>
-              <div className="text-cream/90 font-serif text-lg">Generations Honored</div>
+          {/* Ornamental Pattern Background */}
+          <div className="absolute inset-0 pointer-events-none opacity-25">
+            <div
+              className="w-full h-full"
+              style={{
+                backgroundImage: `url(${patternImg})`,
+                backgroundRepeat: "repeat",
+                backgroundSize: "250px", // adjust this value for smaller or larger repetition
+              }}
+            ></div>
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center bg-rose-500 rounded-full px-8 py-4 mb-8 shadow-xl border-2 border-gold/50">
+                <Trophy className="h-6 w-6 text-cream mr-3" />
+                <span className="text-cream font-bold text-lg font-serif">Our Achievements</span>
+              </div>
+
+              <h1 className="text-5xl lg:text-7xl font-bold text-dark mb-8 font-serif leading-tight">
+                <span className="block text-rose-500 drop-shadow-lg">Awards &</span>
+                <span className="block text-mustard">Recognitions</span>
+              </h1>
+
+              {/* Decorative Divider */}
+              <div className="flex items-center justify-center mb-8">
+                <img
+                  src={dividerImg}
+                  alt="Section Separator"
+                  className="h-16 w-auto"
+                />
+              </div>
+
+              <div className="inline-flex items-center bg-gradient-to-r from-rose-500 to-mustard text-white rounded-full px-8 py-4 mb-6 shadow-2xl border-4 border-gold font-serif transition-transform duration-300 hover:scale-105">
+                <Crown className="h-6 w-6 text-white mr-3 drop-shadow-md" />
+                <span className="text-lg font-bold italic tracking-wide drop-shadow-sm">
+                  "Excellence recognized across 75 years of dedication."
+                </span>
+              </div>
+
+
+              <p className="text-xl lg:text-2xl text-dark/80 max-w-4xl mx-auto leading-relaxed font-serif">
+                Our commitment to quality, tradition, and community service has been recognized by various organizations,
+                government bodies, and industry leaders throughout our journey.
+              </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Awards Grid */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream/20 via-white to-cream/30"></div>
+        {/* Awards Stats */}
+        <section className="py-16 bg-rose-500 text-cream relative overflow-hidden">
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="w-full h-full" style={{
+              backgroundImage: `radial-gradient(circle at 25% 25%, #D4A574 2px, transparent 2px)`,
+              backgroundSize: '60px 60px'
+            }}></div>
+          </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
-            {awardsData.map((award) => (
-              <div
-                key={award.id}
-                className="break-inside-avoid group cursor-pointer"
-                onClick={() => openLightbox(award)}
-              >
-                <div className="bg-white rounded-3xl p-4 shadow-xl hover:shadow-2xl border-4 border-gold/30 relative overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="grid md:grid-cols-4 gap-8 text-center">
+              <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
+                <div className="text-5xl font-bold mb-4 font-serif">15+</div>
+                <div className="text-cream/90 font-serif text-lg">Awards Received</div>
+              </div>
+              <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
+                <div className="text-5xl font-bold mb-4 font-serif">75+</div>
+                <div className="text-cream/90 font-serif text-lg">Years of Excellence</div>
+              </div>
+              <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
+                <div className="text-5xl font-bold mb-4 font-serif">5</div>
+                <div className="text-cream/90 font-serif text-lg">Government Recognitions</div>
+              </div>
+              <div className="bg-cream/10 rounded-2xl p-8 border-2 border-gold/30 shadow-xl">
+                <div className="text-5xl font-bold mb-4 font-serif">3</div>
+                <div className="text-cream/90 font-serif text-lg">Generations Honored</div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-                  <div className="relative overflow-hidden rounded-2xl">
-                    <img
-                      src={award.src}
-                      alt={award.alt}
-                      className="w-full h-auto object-cover"
-                      loading="lazy"
-                    />
+        {/* Awards Grid */}
+        <section className="py-20 bg-white relative overflow-hidden">
+          {/* Background */}
+          <div className="absolute inset-0 bg-gradient-to-br from-cream/20 via-white to-cream/30"></div>
 
-                  </div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div className="columns-1 md:columns-2 lg:columns-3 xl:columns-4 gap-6 space-y-6">
+              {[...awardsData]
+                .sort((a, b) => {
+                  const parseDate = (dateStr: string) => {
+                    const d = new Date(dateStr.replace(/Unknown|N\/A.*|\(.*\)/gi, '').trim());
+                    return isNaN(d.getTime()) ? 0 : d.getTime();
+                  };
+                  return parseDate(b.date) - parseDate(a.date);
+                })
+                .map((award) => (
+                  <div
+                    key={award.id}
+                    className="break-inside-avoid group cursor-pointer"
+                    onClick={() => openLightbox(award)}
+                  >
+                    <div className="bg-white rounded-3xl p-4 shadow-xl hover:shadow-2xl border-4 border-gold/30 relative overflow-hidden">
 
-                  {/* Card Footer */}
-                  <div className="mt-4 relative z-10">
-                    <div className="bg-cream/50 border-l-4 border-rose-500 p-3 rounded-r-lg">
-                      <h4 className="font-bold text-dark font-serif text-sm mb-1">{award.title}</h4>
-                      <p className="text-dark/70 text-xs mb-2">{award.description}</p>
-                      <p className="text-dark/70 text-xs font-serif italic">{award.date}</p>
+                      <div className="relative overflow-hidden rounded-2xl">
+                        <img
+                          src={award.src}
+                          alt={award.alt}
+                          className="w-full h-auto object-cover"
+                          loading="lazy"
+                        />
+
+                      </div>
+
+                      {/* Card Footer */}
+                      <div className="mt-4 relative z-10">
+                        <div className="bg-cream/50 border-l-4 border-rose-500 p-3 rounded-r-lg">
+                          <h4 className="font-bold text-dark font-serif text-sm mb-1">{award.title}</h4>
+                          <p className="text-dark/70 text-xs mb-2">{award.description}</p>
+                          <p className="text-dark/70 text-xs font-serif italic">{award.date}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-            ))}
+                ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Simple Lightbox */}
-      {showLightbox && selectedAward && (
-        <>
-          {/* Background Overlay */}
-          <div
-            className="fixed inset-0 z-40 bg-cream/95 backdrop-blur-sm"
-            onClick={closeLightbox}
-          />
-
-          {/* Lightbox Image */}
-          <img
-            src={selectedAward.src}
-            alt={selectedAward.alt}
-            className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[90vw] max-h-[90vh] object-contain z-50 rounded-2xl shadow-2xl"
-          />
-
-          {/* Lightbox Controls */}
-          <div className="fixed inset-0 z-50 pointer-events-none">
-            {/* Navigation Buttons */}
-            <button
-              onClick={() => navigateAward('prev')}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-rose-500/90 backdrop-blur-sm rounded-full p-3 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
-            >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
-
-            <button
-              onClick={() => navigateAward('next')}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-rose-500/90 backdrop-blur-sm rounded-full p-3 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
-            >
-              <ChevronRight className="w-6 h-6" />
-            </button>
-
-            {/* Close Button */}
-            <button
+        {/* Simple Lightbox */}
+        {showLightbox && selectedAward && (
+          <>
+            {/* Background Overlay */}
+            <div
+              className="fixed inset-0 z-40 bg-cream/95 backdrop-blur-sm"
               onClick={closeLightbox}
-              className="absolute top-4 right-4 bg-rose-500/90 backdrop-blur-sm rounded-full p-2 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
-            >
-              <X className="w-6 h-6" />
-            </button>
+            />
 
-            {/* Award Info */}
-            {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-cream/80 backdrop-blur-md text-dark p-6 rounded-2xl w-[90%] sm:w-fit sm:max-w-full pointer-events-auto shadow-xl border-2 border-gold/30">
+            {/* Lightbox Image */}
+            <img
+              src={selectedAward.src}
+              alt={selectedAward.alt}
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[90vw] max-h-[90vh] object-contain z-50 rounded-2xl shadow-2xl"
+            />
+
+            {/* Lightbox Controls */}
+            <div className="fixed inset-0 z-50 pointer-events-none">
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => navigateAward('prev')}
+                className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-rose-500/90 backdrop-blur-sm rounded-full p-3 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </button>
+
+              <button
+                onClick={() => navigateAward('next')}
+                className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-rose-500/90 backdrop-blur-sm rounded-full p-3 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </button>
+
+              {/* Close Button */}
+              <button
+                onClick={closeLightbox}
+                className="absolute top-4 right-4 bg-rose-500/90 backdrop-blur-sm rounded-full p-2 text-cream hover:bg-rose-500 border-2 border-gold/50 shadow-xl pointer-events-auto"
+              >
+                <X className="w-6 h-6" />
+              </button>
+
+              {/* Award Info */}
+              {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 bg-cream/80 backdrop-blur-md text-dark p-6 rounded-2xl w-[90%] sm:w-fit sm:max-w-full pointer-events-auto shadow-xl border-2 border-gold/30">
               <div className="flex items-center justify-center mb-3">
                 <Award className="h-6 w-6 text-rose-500 mr-2" />
                 <span className="text-rose-500 font-bold font-serif text-sm capitalize">{selectedAward.category}</span>
@@ -361,14 +380,14 @@ const AwardsPage: React.FC = () => {
               <p className="text-lg mb-1 text-center text-mustard drop-shadow-xl">{selectedAward.description}</p>
               <p className="text-sm text-dark font-serif italic text-center drop-shadow-xl">{selectedAward.date}</p>
             </div> */}
-          </div>
-        </>
-      )}
-      <FindNearestStoreButton />
-      <RoseStreetButton />
-      <Footer />
-    </div>
-  );
-};
+            </div>
+          </>
+        )}
+        <FindNearestStoreButton />
+        <RoseStreetButton />
+        <Footer />
+      </div>
+    );
+  };
 
 export default AwardsPage;

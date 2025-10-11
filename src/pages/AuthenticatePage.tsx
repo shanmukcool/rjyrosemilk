@@ -12,7 +12,8 @@ import fssai from "../assets/design/fssai.png"; // Assuming you have an FSSAI im
 import patternImg from "../assets/design/pattern.png";
 import dividerImg from "../assets/design/divider.png";
 import OldLogo from '../assets/oldlogo1.png';
-
+import toia from '../assets/awards/toia.jpg';
+import nidhiPledge from "../assets/awards/nidhi-min.jpg";
 const AuthenticatePage = () => {
     useEffect(() => {
         const sections = document.querySelectorAll(".fade-in-up");
@@ -115,6 +116,54 @@ const AuthenticatePage = () => {
                             alt="IP Rights"
                             className="rounded-2xl shadow-2xl border-4 border-gold/40 max-h-[600px] object-cover"
                         />
+                    </div>
+                </div>
+            </section>
+            {/* Awards & Recognitions Section */}
+            <section className="py-20 bg-white relative overflow-hidden fade-in-up">
+                <div className="absolute inset-0 bg-gradient-to-br from-cream/30 via-white to-cream/50"></div>
+
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 md:text-center">
+                    <div className="flex items-center justify-center mb-8">
+                        <ShieldCheck className="h-8 w-8 text-rose-500 mr-3" />
+                        <h2 className="text-3xl font-bold text-dark font-serif">Awards & Recognitions</h2>
+                    </div>
+
+                    <p className="text-lg text-dark/80 max-w-3xl mx-auto mb-12 font-serif">
+                        Our dedication to authenticity and quality has been recognized by esteemed organizations.
+                        We’re honored to have received these awards for our excellence and commitment to trust.
+                    </p>
+
+                    <div className="grid sm:grid-cols-2 gap-10 justify-center items-center max-w-2xl mx-auto">
+                        {/* Times Business Excellence Award */}
+                        <div className="bg-cream/40 p-6 rounded-2xl shadow-lg border border-gold/30 hover:shadow-xl transition-all">
+                            <img
+                                src={toia}
+                                alt="Times Business Excellence Award"
+                                className="w-full h-auto object-contain mx-auto mb-4"
+                            />
+                            <h3 className="text-xl font-bold text-rose-500 font-serif mb-2">
+                                Times Business Excellence Award
+                            </h3>
+                            <p className="text-dark/70 font-serif">
+                                Recognizing our legacy of trust, innovation, and authentic taste loved across generations.
+                            </p>
+                        </div>
+
+                        {/* Nidhi Pledge Award */}
+                        <div className="bg-cream/40 p-6 rounded-2xl shadow-lg border border-gold/30 hover:shadow-xl transition-all">
+                            <img
+                                src={nidhiPledge}
+                                alt="Nidhi Pledge Award"
+                                className="w-full h-auto object-contain mx-auto mb-4"
+                            />
+                            <h3 className="text-xl font-bold text-rose-500 font-serif mb-2">
+                                Nidhi Pledge Award
+                            </h3>
+                            <p className="text-dark/70 font-serif">
+                                Honoring our commitment to ethical business practices and consumer trust.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>

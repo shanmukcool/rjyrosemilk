@@ -24,6 +24,7 @@ import Footer from '../components/Footer';
 import zomatoImg from '../assets/awards/zomato.png';
 import dafneImg from '../assets/awards/received.jpg';
 import toia from '../assets/awards/toiar.jpg';
+import toiawm from '../assets/np/toiwm.jpg';
 import nidhiImg from '../assets/awards/nidhi-min.jpg';
 import prithviraj from '../assets/gallery/celebritys/20-min.png';
 import hit2 from '../assets/gallery/celebritys/5-min.jpg';
@@ -565,11 +566,16 @@ const HomePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* award 0 - toi */}
               <div className="w-full sm:col-span-1">
-                <div className="w-auto h-full overflow-hidden">
+                <div className="w-auto h-full overflow-hidden relative">
                   <img
                     src={toia}
                     alt="Times of India Award"
                     className="w-full h-auto object-cover"
+                  />
+                  <img
+                    src={toiawm}
+                    alt="Times of India Award watermark"
+                    className="w-[35%] h-auto object-cover absolute top-0 right-0"
                   />
                 </div>
               </div>
@@ -641,7 +647,7 @@ const HomePage = () => {
                 className="h-12 w-auto"
               />
             </div>
-            <div className="grid grid-cols-1 sm:grid-rows-[auti_auto] sm:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-rows-[auti_auto] sm:grid-cols-3 gap-4 items-center">
               {/* celebrity 1 - Portrait (spans 2 rows on large screens) */}
               <div className="w-full sm:row-start-1 sm:col-start-1 sm:row-span-1 sm:col-span-2">
                 <div className="aspect-[7/7] overflow-hidden">
