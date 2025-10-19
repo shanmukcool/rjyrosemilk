@@ -51,7 +51,7 @@ const Footer = () => {
 
               {/* Social Links */}
               <div className="flex space-x-4 items-center">
-                
+
                 <a
                   href="https://wa.me/+916262252519"
                   target="_blank"
@@ -63,7 +63,7 @@ const Footer = () => {
                     className="h-10 w-10 group-hover:scale-110 transition-transform duration-300"
                   />
                 </a>
-                
+
                 <a
                   href="https://www.facebook.com/share/1CiyFns1v9/?mibextid=wwXIfr"
                   target="_blank"
@@ -95,7 +95,7 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="rounded-md transition-all duration-300 overflow-hidden"
                 >
-                  
+
                   <img
                     src={ytLogo}
                     alt="Youtube"
@@ -105,7 +105,18 @@ const Footer = () => {
 
               </div>
             </div>
-
+            {/* About developer */}
+            <div className="inline-flex items-center mt-6 hidden">
+              <span className="text-white/90 mr-1 font-serif text-sm">Developed by</span>
+              <a
+                href="https://shanmuk.me/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gold font-bold hover:text-white transition-colors font-serif text-sm"
+              >
+                Shanmuk
+              </a>
+            </div>
           </div>
 
           {/* Products Section */}
